@@ -1,7 +1,7 @@
 Check if Maven is installed correctly:
 mvn -version
 
-Generate ne Maven Repository:
+Generate new Maven Repository:
 mvn archetype:generate -DgroupId=de.stl.saar.internetentw1.uebungen -DartifactId=Maven
 
-Copying dependency from http://mvnrepository.com/
+Copying dependency from https://mvnrepository.com/artifact/org.apache.commons/commons-math3/3.6.1
