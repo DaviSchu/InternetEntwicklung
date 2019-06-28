@@ -23,3 +23,8 @@ mvn javadoc:javadoc
 
 Run w/o packaging:
 mvn exec:java -Dexec.mainClass="Main"
+
+Create modules:
+mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Model
+mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Core
+mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Persistence
