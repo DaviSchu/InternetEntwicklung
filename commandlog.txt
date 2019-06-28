@@ -9,5 +9,14 @@ Copying dependency from https://mvnrepository.com/artifact/org.apache.commons/co
 Run Tests:
 mvn test
 
-clean directory target:
+Create Jar:
+mvn package
+
+Clean directory target:
 mvn clean
+
+Install local repository:
+mvn install
+
+Create JavaDoc:
+mvn javadoc:javadoc
