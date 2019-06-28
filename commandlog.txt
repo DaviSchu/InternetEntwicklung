@@ -28,3 +28,9 @@ Create modules:
 mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Model
 mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Core
 mvn archetype:generate -DgroubId=de.stl.saar.internetentw1.uebungen DartifactId=Persistence
+
+Create all jars:
+mvn jar  -> on highest level
+
+Install all jars:
+mvn install  -> also on highest level

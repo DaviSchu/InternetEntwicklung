@@ -1,3 +1,5 @@
+package de.stl.saar.internetentw1;
+
 import java.io.*;
 
 public class Main {
