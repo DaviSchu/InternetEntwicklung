@@ -20,3 +20,6 @@ mvn install
 
 Create JavaDoc:
 mvn javadoc:javadoc
+
+Run w/o packaging:
+mvn exec:java -Dexec.mainClass="Main"
