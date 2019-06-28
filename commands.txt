@@ -1,3 +1,0 @@
-    • mvn -version
-    • mvn archetype:generate -DgroupId=de.stl.saar.internetentw1.uebungen -DartifactId=Maven
-    • Copying dependency from http://mvnrepository.com/
