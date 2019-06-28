@@ -8,3 +8,6 @@ Copying dependency from https://mvnrepository.com/artifact/org.apache.commons/co
 
 Run Tests:
 mvn test
+
+clean directory target:
+mvn clean
