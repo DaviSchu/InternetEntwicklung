@@ -8,29 +8,87 @@
   <packaging>pom</packaging>
 
   <name>Maven</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <hibernate-core-version>5.4.3.Final</hibernate-core-version>
+    <junit-version>4.11</junit-version>
+    <math-version>3.6.1</math-version>
+    <lang-version>3.9</lang-version>
+    <logging-version>1.2</logging-version>
+    <jpa-api-version>2.0-cr-1</jpa-api-version>
+    <jpa-2.0-version>1.0.2.Final</jpa-2.0-version>
+    <joda-time-version>2.10.2</joda-time-version>
+    <persistence-version>1.0-SNAPSHOT</persistence-version>
+    <model-version>1.0-SNAPSHOT</model-version>
   </properties>
+
+  <modules>
+    <module>Model</module>
+    <module>Core</module>
+    <module>Persistence</module>
+  </modules>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>${junit-version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-math3</artifactId>
-      <version>3.6.1</version>
+      <version>${math-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>${logging-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate-core-version}</version>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>Model</artifactId>
+        <version>${model-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>Persistence</artifactId>
+        <version>${persistence-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>${joda-time-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${lang-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate.java-persistence</groupId>
+        <artifactId>jpa-api</artifactId>
+        <version>${jpa-api-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.1-api</artifactId>
+        <version>${jpa-2.0-version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <pluginManagement>
@@ -85,9 +143,4 @@
       </plugins>
     </pluginManagement>
   </build>
-<modules>
-    <module>Model</module>
-  <module>Core</module>
-  <module>Persistence</module>
-  </modules>
 </project>
