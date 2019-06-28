@@ -38,3 +38,12 @@ mvn install  -> also on highest level
 Check whether dependencies are correct:
 mvn package  -> to check whether there are no errors
 mvn help:effective-pom  -> to see actual used dependencies
+
+Show list of dependencies:
+mvn dependency:list
+
+Show tree of dependencies:
+mvn dependency:tree
+
+Get unused dependencies:
+mvn dependency:analyze
