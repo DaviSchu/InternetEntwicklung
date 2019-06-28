@@ -9,7 +9,5 @@ public class Main {
         while((line= reader.readLine()) != null) {
             System.out.println(line);
         }
-        MyMath mm = new MyMath();
-        System.out.println(mm.add(4,9));
     }
 }

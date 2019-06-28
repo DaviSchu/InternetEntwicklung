@@ -15,7 +15,7 @@ mvn package
 Clean directory target:
 mvn clean
 
-Install local repository:
+Install to local repository:
 mvn install
 
 Create JavaDoc:
