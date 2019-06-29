@@ -1,0 +1,36 @@
+<faqs title="FAQ">
+    <part id="faq">
+        <title>Allgemeine Fragen</title>
+        <faq id="mayodazu">
+            <question>Gibt es auch Mayo dazu?</question>
+            <answer>
+                <p>Gegen einen kleinen Aufpreis von
+                    <b>20 Cent</b></p>
+            </answer>
+        </faq>
+
+        <faq id="sinnvollefrage">
+            <question>Werden Fahrtkosten erstattet?</question>
+            <answer>
+                <p>Ab einer Distanz von 2 Metern und mindestens 3
+                    Personen im Fahrzeug</p>
+            </answer>
+        </faq>
+
+        <title>Anforderungen</title>
+        <faq id="wow">
+            <question>Kann ich die Seite auch auf meinem
+                smarten Kühlschrank aufrufen?</question>
+            <answer>
+                <p>Ja..</p>
+            </answer>
+        </faq>
+        <faq id="super">
+            <question>Läuft das Programm auch auf Windows 2.0?</question>
+            <answer>
+                <p>...</p>
+            </answer>
+        </faq>
+    </part>
+
+</faqs>

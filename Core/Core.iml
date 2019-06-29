@@ -11,9 +11,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: de.stl.saar.internetentw1:Model:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="Model" />
     <orderEntry type="library" name="Maven: org.hibernate.java-persistence:jpa-api:2.0-cr-1" level="project" />
-    <orderEntry type="library" name="Maven: de.stl.saar.internetentw1:Persistence:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="Persistence" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.10.2" level="project" />

@@ -51,3 +51,7 @@ mvn dependency:analyze
 Generate documentation:
 mvn site
 mvn site:stage
+
+Run Plugin:
+mvn de.stl.saar.internetentw1.uebungen:BackupMojo:backup
+
