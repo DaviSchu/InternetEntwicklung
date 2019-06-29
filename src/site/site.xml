@@ -1,4 +1,4 @@
-<project >
+<project>
     <publishDate format="dd.MM.yyyy"/>
     <body>
         <menu ref="modules"/>

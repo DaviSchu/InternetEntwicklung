@@ -10,7 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Model" />
+    <orderEntry type="library" name="Maven: de.stl.saar.internetentw1:Model:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.java-persistence:jpa-api:2.0-cr-1" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
