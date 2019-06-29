@@ -47,3 +47,7 @@ mvn dependency:tree
 
 Get unused dependencies:
 mvn dependency:analyze
+
+Generate documentation:
+mvn site
+mvn site:stage

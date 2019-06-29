@@ -4,10 +4,17 @@
 
   <groupId>de.stl.saar.internetentw1.uebungen</groupId>
   <artifactId>Maven</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
 
   <name>Maven</name>
+
+  <distributionManagement>
+    <site>
+      <id>${project.artifactId}-site</id>
+      <url>https://www.htwsaar.de</url>
+    </site>
+  </distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,8 +28,12 @@
     <jpa-api-version>2.0-cr-1</jpa-api-version>
     <jpa-2.0-version>1.0.2.Final</jpa-2.0-version>
     <joda-time-version>2.10.2</joda-time-version>
-    <persistence-version>1.0-SNAPSHOT</persistence-version>
-    <model-version>1.0-SNAPSHOT</model-version>
+    <persistence-version>1.0</persistence-version>
+    <model-version>1.0</model-version>
+    <taglist-version>2.4</taglist-version>
+    <javadoc-version>3.1.0</javadoc-version>
+    <findbugs-version>3.0.5</findbugs-version>
+    <checkstyle-version>3.1.0</checkstyle-version>
   </properties>
 
   <modules>
@@ -61,11 +72,13 @@
         <groupId>${project.groupId}</groupId>
         <artifactId>Model</artifactId>
         <version>${model-version}</version>
+        <type>pom</type>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>Persistence</artifactId>
         <version>${persistence-version}</version>
+        <type>pom</type>
       </dependency>
       <dependency>
         <groupId>joda-time</groupId>
@@ -89,6 +102,58 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${javadoc-version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${checkstyle-version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>${findbugs-version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>${taglist-version}</version>
+        <configuration>
+          <tagListOptions>
+            <tagClasses>
+              <tagClass>
+                <displayName>TODO</displayName>
+                <tag>
+                  <matchString>TODO</matchString>
+                  <matchType>ignoreCase</matchType>
+                </tag>
+              </tagClass>
+              <tagClass>
+                <displayName>Untested</displayName>
+                <tag>
+                  <matchString>TEST_ME</matchString>
+                  <matchType>ignoreCase</matchType>
+                </tag>
+              </tagClass>
+              <tagClass>
+                <displayName>Refactor</displayName>
+                <tag>
+                  <matchString>REFACTORIZE_ME</matchString>
+                  <matchType>ignoreCase</matchType>
+                </tag>
+              </tagClass>
+            </tagClasses>
+          </tagListOptions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <build>
     <pluginManagement>
@@ -143,4 +208,5 @@
       </plugins>
     </pluginManagement>
   </build>
+
 </project>
