@@ -55,3 +55,5 @@ mvn site:stage
 Run Plugin:
 mvn de.stl.saar.internetentw1.uebungen:BackupMojo:backup
 
+For Installing the project, please change the phase of the backup-plugin to deploy. After that,
+change the phase to compile again.

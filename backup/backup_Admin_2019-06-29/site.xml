@@ -1,0 +1,11 @@
+<project>
+    <publishDate format="dd.MM.yyyy"/>
+    <body>
+        <menu ref="modules"/>
+        <menu ref="parent"/>
+        <menu ref="reports"/>
+        <menu name="FAQ">
+            <item name="FAQ" href="faq.html"/>
+        </menu>
+    </body>
+</project>
