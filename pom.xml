@@ -40,6 +40,7 @@
     <module>Model</module>
     <module>Core</module>
     <module>Persistence</module>
+  <module>BackupMojo</module>
   </modules>
 
   <dependencies>
@@ -156,6 +157,21 @@
   </reporting>
 
   <build>
+    <plugins>
+      <plugin>
+        <groupId>de.stl.saar.internetentw1.uebungen</groupId>
+        <artifactId>backup-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>backup</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
     <pluginManagement>
       <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
