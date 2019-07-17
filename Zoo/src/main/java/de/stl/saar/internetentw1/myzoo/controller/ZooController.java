@@ -20,5 +20,9 @@ import de.stl.saar.internetentw1.myzoo.model.Compound;
  */
 @Controller
 public class ZooController {
-	
+
+    @RequestMapping("/")
+    String home() {
+	    return "irgendeppes";
+	}
 }
