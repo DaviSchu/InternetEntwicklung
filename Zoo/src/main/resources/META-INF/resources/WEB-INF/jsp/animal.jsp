@@ -1,6 +1,8 @@
+<%@ page pageEncoding="ISO-8859-1" %>
+
 <html>
     <head>
-        <h2>Sie beobachten und beobachtet zurueck.</h2>
+        <h2>Sie beobachten und beobachtet zurück.</h2>
     </head>
     <body>
         Bilder

@@ -111,7 +111,7 @@ public class Database {
 		Animal elephant = new Animal("Elefant", "elephant", random.nextInt(10));
 		africaCompound.addAnimal(elephant);
 		
-		Compound birdsCompound = new Compound("Vögel");
+		Compound birdsCompound = new Compound("Vogel");
 		Animal eagle = new Animal("Adler", "eagle", random.nextInt(10));
 		birdsCompound.addAnimal(eagle);
 		Animal condor = new Animal("Kondor", "condor", random.nextInt(10));
@@ -121,7 +121,7 @@ public class Database {
 		Animal ostrich = new Animal("Strauß", "ostrich", random.nextInt(10));
 		birdsCompound.addAnimal(ostrich);
 		
-		Compound penguinCompond = new Compound("Pinguine");
+		Compound penguinCompond = new Compound("Pinguin");
 		Animal kingPenguin = new Animal("Königspinguin", "kingPenguin", random.nextInt(10));
 		penguinCompond.addAnimal(kingPenguin);
 		Animal galapagosPenguin = new Animal("Galapagos Pinguin", "galapagosPenguin", random.nextInt(10));

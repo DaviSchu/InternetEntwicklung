@@ -28,16 +28,4 @@ public class ZooController {
 
 	@RequestMapping("/Gehege")
     String gehege() { return "gehege"; }
-
-	@RequestMapping("/Afrika")
-    String afrika() { return "afrika"; }
-
-    @RequestMapping("/Snakes")
-    String snakes() { return "snakes"; }
-
-    @RequestMapping("/Penguins")
-    String penguins() { return "penguins"; }
-
-    @RequestMapping("/Birds")
-    String birds() { return "birds"; }
 }
