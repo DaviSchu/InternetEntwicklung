@@ -10,7 +10,7 @@
     </h1>
     </head>
     <body>
-        <h1>Sie sehen diese Tiere:</h1>
-        <h1>Diese Tiere verstecken sich:</h1>
+        <h2>Sie sehen diese Tiere:</h2>
+        <h2>Diese Tiere verstecken sich:</h2>
     </body>
 </html>
