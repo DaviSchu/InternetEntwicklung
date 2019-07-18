@@ -3,7 +3,8 @@
 <html>
     <head>
         <h1>Willkommen im Zoo</h1>
-        <h2>Wo moechten Sie hin</h2>
+        <h2>Welches Gehege moechten Sie besuchen?</h2>
+        <h3>Schauen Sie auf unsere Karte</h3>
     </head>
     <body>
         <form action="/Gehege">
