@@ -3,7 +3,7 @@
 <%@ page import="de.stl.saar.internetentw1.myzoo.database.Database" %>
 <%@ page import="de.stl.saar.internetentw1.myzoo.model.Animal" %>
 
-<%@ page pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html; UTF-8" %>
 
 <%! private String gehege; %>
 <%! private List<Animal> animals; %>
@@ -12,24 +12,23 @@
 <% animals = Database.findCompoundByName(gehege).getAnimals(); %>
 
 <html>
+<head>
+    <title><%=gehege%>
+    </title>
+</head>
+<body>
 <div style="text-align: center;">
-
-    <head>
-        <title><%=gehege%>
-        </title>
-        <h1> Sie sind hier: </h1>
-        <h2>
-            <% out.print(gehege); %> - Gehege
-        </h2>
-    </head>
-    <body>
+    <h1> Sie sind hier: </h1>
+    <h2>
+        <% out.print(gehege); %> - Gehege
+    </h2>
     <h3>
         Sie sehen diese Tiere:<br/>
         <%
             for (Animal a : animals) {
                 if (a.isHidden()) continue;
                 out.println("<form action=\"/Gehege/Tier\">" +
-                        "<input type=\"hidden\" name=\"gehege\" value=\"" + gehege            + "\"/>" +
+                        "<input type=\"hidden\" name=\"gehege\" value=\"" + gehege + "\"/>" +
                         "<input type=\"submit\" name=\"name\"   value=\"" + a.getAnimalName() + "\"/>" +
                         "</form>");
                 //out.println("<br />");
@@ -50,6 +49,6 @@
     <h1>
         <input type="button" onclick="window.location='/'" value="Zurück zur Karte"/>
     </h1>
-    </body>
 </div>
+</body>
 </html>
