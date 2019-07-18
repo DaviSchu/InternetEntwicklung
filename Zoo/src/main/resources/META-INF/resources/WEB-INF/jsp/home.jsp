@@ -1,9 +1,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
-    <body>
+    <head>
         <h1>Willkommen im Zoo</h1>
         <h2>Wo moechten Sie hin</h2>
+    </head>
+    <body>
         <form action="/Gehege">
             <input type="hidden" name="gehege" value="Afrika" />
             <input type="submit" value="Afrika" />
