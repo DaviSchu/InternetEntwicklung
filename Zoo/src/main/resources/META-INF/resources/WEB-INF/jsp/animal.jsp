@@ -19,14 +19,14 @@
 </head>
 <body>
 <div style="text-align: center;">
-    <h2>Sie beobachten: <%=name%>
+    <h2>Sie beobachten <%=name%> und <%=name%> beobachtet zurück.
     </h2>
     <img src="/images/<%=animal.getImage()%>.jpg" alt="<%=animal.getImage()%>">
     <h3>
         <%
             int hunger = animal.getHunger();
             if (hunger == 0) {
-                out.print("Das Tier hat keinen Hunger");
+                out.print("Das Tier " + name + " hat keinen Hunger");
             } else {
                 out.print("Hunger: " + hunger);%>
         <input type="button" name="feed" value="feed"
