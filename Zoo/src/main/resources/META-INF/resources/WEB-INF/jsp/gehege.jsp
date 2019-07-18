@@ -26,8 +26,8 @@
             <%
                 for(Animal a: animals) {
                     if (a.isHidden()) continue;
-                    out.println(a.getAnimalName());
-                    out.println("<br />");
+                        out.println(a.getAnimalName());
+                        out.println("<br />");
                 }
             %>
         </h3>
@@ -36,8 +36,8 @@
             <%
                 for(Animal a: animals) {
                     if (!a.isHidden()) continue;
-                    out.println(a.getAnimalName());
-                    out.println("<br />");
+                        out.println(a.getAnimalName());
+                        out.println("<br />");
                 }
             %>
         </h3>
