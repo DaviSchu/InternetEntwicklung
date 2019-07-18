@@ -23,6 +23,21 @@ public class ZooController {
 
     @RequestMapping("/")
     String home() {
-	    return "irgendeppes";
+	    return "home";
 	}
+
+	@RequestMapping("/Gehege")
+    String gehege() { return "gehege"; }
+
+	@RequestMapping("/Afrika")
+    String afrika() { return "afrika"; }
+
+    @RequestMapping("/Snakes")
+    String snakes() { return "snakes"; }
+
+    @RequestMapping("/Penguins")
+    String penguins() { return "penguins"; }
+
+    @RequestMapping("/Birds")
+    String birds() { return "birds"; }
 }
