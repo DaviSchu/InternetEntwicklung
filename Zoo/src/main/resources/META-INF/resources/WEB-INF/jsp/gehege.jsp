@@ -11,5 +11,6 @@
     </head>
     <body>
         <h1>Sie sehen diese Tiere:</h1>
+        <h1>Diese Tiere verstecken sich:</h1>
     </body>
 </html>
