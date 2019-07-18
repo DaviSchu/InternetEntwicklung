@@ -28,4 +28,7 @@ public class ZooController {
 
 	@RequestMapping("/Gehege")
     String gehege() { return "gehege"; }
+
+    @RequestMapping("/Gehege/Tier")
+    String tier() { return "animal"; }
 }
