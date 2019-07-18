@@ -9,8 +9,5 @@
         <module name="1-SpringBootJsp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="1-SpringBootJsp" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
