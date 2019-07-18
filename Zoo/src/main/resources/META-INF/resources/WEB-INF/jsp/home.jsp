@@ -2,18 +2,23 @@
 
 <html>
     <body>
-        <h1>Arschgeile Seite</h1>
-        <h2>Willst du wissen was 29 + 22 ist?</h2>
-        <button name="hi" type="button" onclick="doit()">JA</button>
-        <input type="submit" value="Afrika"
-               onclick="window.location='/Gehege';"
-                <% session.setAttribute("gehege", "afrika");%>
-        />
-
-        <script>
-            function doit() {
-                alert("ALARM   ALAAAAARM");
-            }
-        </script>
+        <h1>Willkommen im Zoo</h1>
+        <h2>Wo moechten Sie hin</h2>
+        <form action="/Gehege">
+            <input type="hidden" name="gehege" value="Afrika" />
+            <input type="submit" value="Afrika" />
+        </form>
+        <form action="/Gehege">
+            <input type="hidden" name="gehege" value="Schlangen" />
+            <input type="submit" value="Schlangen" />
+        </form>
+        <form action="/Gehege">
+            <input type="hidden" name="gehege" value="Voegel" />
+            <input type="submit" value="Voegel" />
+        </form>
+        <form action="/Gehege">
+            <input type="hidden" name="gehege" value="Pinguine" />
+            <input type="submit" value="Pinguine" />
+        </form>
     </body>
 </html>
