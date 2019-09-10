@@ -8,9 +8,14 @@
 <title>Facelets und Templating</title>
 </head>
 <body>
+	<h1>Hallo</h1>
+	<a href="SmartMensa/login.jsf" target="_blank">SmartMensa</a>
 	<ui:composition template="/SmartMensa/template.xhtml">
 		<ui:define name="content">
 		<h:commandLink value="Login" action="login"/>
+			<h:form>
+				<h:commandButton value="Klick mich" action="header"/>
+			</h:form>
 		</ui:define>
 	</ui:composition>
 </body>

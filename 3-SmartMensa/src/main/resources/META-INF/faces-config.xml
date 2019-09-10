@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
+<faces-config>
     xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_3.xsd"
@@ -19,4 +19,15 @@
             <supported-locale>en</supported-locale>
         </locale-config>
     </application>
+
+    <navigation-rules>
+        <navigation-rule>
+            <description>Jede Seite zu irgendwas</description>
+            <from-view-id>*</from-view-id>
+                <navigation-case>
+                    <from-outcome>toLogin</from-outcome>
+                    <to-view-id>header</to-view-id>
+                </navigation-case>
+        </navigation-rule>
+    </navigation-rules>
 </faces-config> 
