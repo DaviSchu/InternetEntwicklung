@@ -26,7 +26,7 @@
             <from-view-id>*</from-view-id>
                 <navigation-case>
                     <from-outcome>toLogin</from-outcome>
-                    <to-view-id>header</to-view-id>
+                    <to-view-id>SmartMensa/footer.jsf</to-view-id>
                 </navigation-case>
         </navigation-rule>
     </navigation-rules>

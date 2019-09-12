@@ -18,11 +18,7 @@ public class StringUtils {
 	}
 	
 	public static boolean areStringsEqual(final String string1, final String string2) {
-		if (string1.equals(string2)) {
-			return true;
-		} else {
-			return false;
-		}
+		return string1.equals(string2);
 	}
 	
 	/**
@@ -39,7 +35,6 @@ public class StringUtils {
 		if (indexOfCharacter < 0) {
 			return theString;
 		}
-		final String beforeCharacter = theString.substring(0, indexOfCharacter);
-		return beforeCharacter;
+		return theString.substring(0, indexOfCharacter);
 	}
 }

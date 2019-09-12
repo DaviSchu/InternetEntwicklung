@@ -11,7 +11,8 @@
 
 		<ui:define name = "content">
 			<h:form>
-				<h:commandButton value="Klick mich" action="header"/>
+				<h:inputText value="#{loginView.userName}" />
+				<h:commandButton value="Weiter" action="#{loginView.carryOn}" />
 			</h:form>
 		</ui:define>
 
