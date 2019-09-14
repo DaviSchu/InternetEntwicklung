@@ -5,7 +5,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class loginView {
+public class LoginView {
     private String userName;
 
     public String getUserName() {
