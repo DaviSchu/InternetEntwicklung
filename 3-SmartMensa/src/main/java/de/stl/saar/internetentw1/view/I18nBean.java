@@ -20,7 +20,7 @@ public class I18nBean implements Serializable{
 
     @PostConstruct
     public void initialize() {
-        languages = new LinkedHashMap<String,Object>();
+        languages = new LinkedHashMap<>();
         languages.put("Deutsch", Locale.GERMAN);
         languages.put("English", Locale.ENGLISH);
         localeCode = Locale.GERMAN.getLanguage();
@@ -31,8 +31,7 @@ public class I18nBean implements Serializable{
 
         for (Map.Entry<String, Object> entry : languages.entrySet()) {
             if (entry.getValue().toString().equals(newLocale)) {
-                FacesContext.getCurrentInstance()
-                        .getViewRoot().setLocale((Locale)entry.getValue());
+                FacesContext.getCurrentInstance().getViewRoot().setLocale((Locale)entry.getValue());
             }
         }
     }
@@ -49,17 +48,4 @@ public class I18nBean implements Serializable{
         return languages;
     }
 
-  /*  public Map<String> getSelectedLanguage() {
-        if (localeCode==null) {
-            for (Map.Entry<String, Object> entry : languages.entrySet()) {
-                if (entry.getValue().toString().equals(localeCode)) {
-                    return language;
-                }
-            }
-        }
-
-        return languages.get(0);
-    }
-
-   */
 }
