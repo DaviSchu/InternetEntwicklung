@@ -7,11 +7,13 @@
 
 <body>
     <ui:composition>
-        <h1>Footer</h1>
         <h:form>
             <c:if test="#{not empty loginView.userName}">
-                <h:outputText value="Willkommen #{loginView.userName}  " />
+                <h:outputText value="Willkommen #{loginView.userName}" /><br/>
             </c:if>
+            <h:outputText  value="2019 (c) SystemTechnikLabor"/> <br/>
+            <h:outputText value="Goebenstraße 40"/><br/>
+            <h:outputText value="66117 Saarbrücken"/>
         </h:form>
     </ui:composition>
 
