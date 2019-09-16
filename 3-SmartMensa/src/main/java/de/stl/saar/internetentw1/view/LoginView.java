@@ -1,11 +1,10 @@
 package de.stl.saar.internetentw1.view;
 
-import de.stl.saar.internetentw1.dao.classes.UserDaoImpl;
+import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.util.List;
 
 @ManagedBean
 @SessionScoped
@@ -13,8 +12,15 @@ public class LoginView {
 
     private String userName;
     private String password;
+    private User currentUser;
 
+    public User getCurrentUser() {
+        return currentUser;
+    }
 
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
 
     public String getUserName() {
         return userName;
@@ -33,14 +39,16 @@ public class LoginView {
     }
 
     public String login() {
-        UserDaoImpl userDao = new UserDaoImpl();
-        userDao.initialize();
 
-        List<User> users = userDao.findAllUsers();
+        User abdul = new User(1,"Abdul","vollkornkeks",new Role(1,"user"));
+        User david = new User(2,"David","davetherave",new Role(1,"user"));
+
+        User[] users = {abdul,david};
 
         for(User u: users) {
             if(u.getUsername().matches(userName)) {
                 if(u.getPassword().matches(password)) {
+                    currentUser = u;
                     return "toOverview";
                 }
             }
