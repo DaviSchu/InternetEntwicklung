@@ -11,9 +11,17 @@
 
 		<ui:define name = "content">
 			<h:form>
-				Anmelden:
-				<h:inputText value="#{loginView.userName}" />
-				<h:commandButton value="Ausloggen" action="#{loginView.carryOn}" />
+				Anmelden:<br/>
+				<p>
+					<h:outputText value="Username: " />
+					<h:inputText value="#{loginView.userName}" />
+				</p>
+				<p>
+					<h:outputText value="Passwort:  " />
+					<h:inputSecret value="#{loginView.password}" />
+				</p>
+				<h:commandButton value="Einloggen" action="#{loginView.login}" />
+
 			</h:form>
 		</ui:define>
 
