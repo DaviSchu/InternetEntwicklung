@@ -22,12 +22,20 @@
 
     <navigation-rules>
         <navigation-rule>
-            <description>Jede Seite zu irgendwas</description>
+            <description>Zum Login</description>
             <from-view-id>*</from-view-id>
                 <navigation-case>
                     <from-outcome>toLogin</from-outcome>
                     <to-view-id>SmartMensa/login.jsf</to-view-id>
                 </navigation-case>
+        </navigation-rule>
+        <navigation-rule>
+            <description>Zur Overview</description>
+            <from-view-id>*</from-view-id>
+            <navigation-case>
+                <from-outcome>toOverview</from-outcome>
+                <to-view-id>SmartMensa/overview.jsf</to-view-id>
+            </navigation-case>
         </navigation-rule>
     </navigation-rules>
 </faces-config> 
