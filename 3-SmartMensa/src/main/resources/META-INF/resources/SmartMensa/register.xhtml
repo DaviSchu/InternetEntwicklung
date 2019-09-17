@@ -11,7 +11,25 @@
 
         <ui:define name = "content">
             <h:form>
-                <h:commandButton value="#{labels.labelBack}" action="login" />
+                <h:panelGrid columns="3">
+                    <h:outputText value="#{labels.labelUsername}" />
+                    <h:inputText value="" id="txtUsername"
+                                 required="true" requiredMessage="#{msg.usernameRequired}" />
+                    <h:message for="txtUsername" errorStyle="color: red" />
+
+                    <h:outputText value="#{labels.labelPassword}:" />
+                    <h:inputSecret value="#{loginView.password}" id="txtPassword"
+                                   required="true" requiredMessage="#{msg.passwordRequired}"/>
+                    <h:message for="txtPassword" errorStyle="color: red" />
+
+                    <h:outputText value="#{labels.labelPasswordConfirmation}:" />
+                    <h:inputSecret value="#{loginView.password}" id="txtPasswordConfirmation"
+                                   required="true" requiredMessage="#{msg.passwordConfirmationRequired}"/>
+                    <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
+
+                    <h:commandButton value="#{labels.buttonRegistration}" action=""/>
+                    <h:commandButton value="#{labels.labelBack}" action="login" />
+                </h:panelGrid>
             </h:form>
         </ui:define>
 
