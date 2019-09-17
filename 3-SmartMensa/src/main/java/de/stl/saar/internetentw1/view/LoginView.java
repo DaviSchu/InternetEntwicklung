@@ -1,18 +1,12 @@
 package de.stl.saar.internetentw1.view;
 
-import de.stl.saar.internetentw1.dao.classes.UserDaoImpl;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
-import de.stl.saar.internetentw1.spring.configuration.DaoConfiguration;
-import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
 import java.util.List;
 
 @ManagedBean
@@ -64,12 +58,6 @@ public class LoginView {
     }
 
     public String login() {
-        /*
-        User abdul = new User(1,"Abdul","vollkornkeks",new Role(1,"user"));
-        User david = new User(2,"David","davetherave",new Role(1,"user"));
-
-        User[] users = {abdul,david};
-        */
 
         for(User u: userList) {
             if(u.getUsername().matches(userName)) {

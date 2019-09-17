@@ -22,6 +22,7 @@ import de.stl.saar.internetentw1.utils.RandomUtils;
  *
  */
 public class UserDaoImpl implements UserDao {
+
 	private Map<Integer, User> userTable;
 	private RoleDao roleDao;
 
