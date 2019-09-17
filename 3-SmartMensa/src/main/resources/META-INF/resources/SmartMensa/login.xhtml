@@ -22,6 +22,19 @@
 
 				</p:panelGrid>
 				<h:commandButton value="#{labels.buttonLogin}" action="#{loginView.login}" />
+
+				<h:dataTable value="#{userDao.findAllUsers()}" var="user">
+					<h:column>
+						<f:facet name="Header">Name</f:facet>
+						#{user.username}
+					</h:column>
+					<h:column>
+						<f:facet name="Header">Passwort</f:facet>
+						#{user.password}
+					</h:column>
+				</h:dataTable>
+
+				<h:commandButton value="Add" actionListener="#{loginView.addUser(loginView.userName,loginView.password)}" />
 			</h:form>
 		</ui:define>
 
