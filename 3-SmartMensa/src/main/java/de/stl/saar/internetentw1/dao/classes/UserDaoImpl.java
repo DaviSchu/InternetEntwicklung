@@ -28,6 +28,7 @@ public class UserDaoImpl implements UserDao {
 	@PostConstruct
 	public void initialize() {
 		userTable = new HashMap<>();
+
 		final Role adminRole = roleDao.findRoleByName("admin");
 		final Role userRole = roleDao.findRoleByName("user");
 		final User user1 = new User(1, "colbertz", "1234", adminRole);
