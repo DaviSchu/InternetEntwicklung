@@ -97,7 +97,7 @@ public class DishDaoImpl implements DishDao {
 	public void removeDish(final int dishId) {
 		dishTable.remove(dishId);
 	}
-	
+
 	@Override
 	public List<Dish> findAllDishes() {
 		final Collection<Dish> dishCollection = dishTable.values();

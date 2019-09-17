@@ -23,7 +23,7 @@
     <navigation-rules>
         <navigation-rule>
             <description>Zum Login</description>
-            <from-view-id>*</from-view-id>
+            <from-view-id>/SmartMensa/*</from-view-id>
                 <navigation-case>
                     <from-outcome>toLogin</from-outcome>
                     <to-view-id>SmartMensa/login.jsf</to-view-id>
@@ -37,5 +37,22 @@
                 <to-view-id>SmartMensa/overview.jsf</to-view-id>
             </navigation-case>
         </navigation-rule>
+        <navigation-rule>
+            <description>Zur Gerichteverwaltung</description>
+            <from-view-id>SmartMensa/overview.jsf</from-view-id>
+            <navigation-case>
+                <from-outcome>toDishes</from-outcome>
+                <to-view-id>SmartMensa/dishes.jsf</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+        <navigation-rule>
+            <description>Zur Gerichteänderung</description>
+            <from-view-id>SmartMensa/dishes.jsf</from-view-id>
+            <navigation-case>
+                <from-outcome>toChangeDishes</from-outcome>
+                <to-view-id>SmartMensa/changeDishes.jsf</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+
     </navigation-rules>
 </faces-config> 
