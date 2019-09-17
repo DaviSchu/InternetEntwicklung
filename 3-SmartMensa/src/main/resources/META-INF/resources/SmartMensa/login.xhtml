@@ -32,6 +32,10 @@
 						<f:facet name="Header">Passwort</f:facet>
 						#{user.password}
 					</h:column>
+					<h:column>
+						<f:facet name="Header">Passwort</f:facet>
+						#{user.role.roleName}
+					</h:column>
 				</h:dataTable>
 
 				<h:commandButton value="Add" actionListener="#{loginView.addUser(loginView.userName,loginView.password)}" />
