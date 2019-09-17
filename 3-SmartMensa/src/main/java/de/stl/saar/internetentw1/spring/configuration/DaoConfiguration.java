@@ -34,10 +34,4 @@ public class DaoConfiguration {
 	public RoleDao createRoleDao() {
 		return roleDao;
 	}
-
-	@Bean(name = "loginView")
-	public LoginView createLoginView() {
-		loginView.setUserDao(userDao);
-		return loginView;
-	}
 }

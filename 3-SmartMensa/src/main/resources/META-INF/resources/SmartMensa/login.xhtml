@@ -12,17 +12,21 @@
 		<ui:define name = "content">
 			<h:form>
 				<h1>Login</h1>
-				<p:panelGrid columns="2">
-
+				<p:panelGrid columns="3">
 					<h:outputText value="#{labels.labelUsername}:" />
-					<h:inputText value="#{loginView.userName}" />
+					<h:inputText value="#{loginView.userName}" id="txtUsername"
+								 required="true" requiredMessage="#{msg.usernameRequired}"/>
+					<h:message for="txtUsername" errorStyle="color: red" />
 
 					<h:outputText value="#{labels.labelPassword}:" />
-					<h:inputSecret value="#{loginView.password}" />
+					<h:inputSecret value="#{loginView.password}" id="txtPassword"
+								   required="true" requiredMessage="#{msg.passwordRequired}"/>
+					<h:message for="txtPassword" errorStyle="color: red" />
 
+					<h:commandButton value="#{labels.buttonLogIn}" action="#{loginView.login}" />
+					<h:commandButton value="#{labels.buttonRegistration}" action="register" />
 				</p:panelGrid>
-				<h:commandButton value="#{labels.buttonLogIn}" action="#{loginView.login}" />
-
+				<br/>
 				<h:dataTable value="#{userDao.findAllUsers()}" var="user">
 					<h:column>
 						<f:facet name="Header">Name</f:facet>
@@ -37,11 +41,8 @@
 						#{user.role.roleName}
 					</h:column>
 				</h:dataTable>
-
-				<h:commandButton value="Add" actionListener="#{loginView.addUser(loginView.userName,loginView.password)}" />
 			</h:form>
 		</ui:define>
-
 
 	</ui:composition>
 </h:body>

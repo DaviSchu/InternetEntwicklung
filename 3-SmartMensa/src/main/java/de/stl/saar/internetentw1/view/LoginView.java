@@ -6,6 +6,7 @@ import de.stl.saar.internetentw1.model.User;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import java.util.List;
 
@@ -13,15 +14,14 @@ import java.util.List;
 @SessionScoped
 public class LoginView {
 
-    private List<User> userList;
+    @ManagedProperty("#{userDao}")
     private UserDao userDao;
+
+    private List<User> userList;
 
     private String userName;
     private String password;
     private User currentUser;
-
-    @PostConstruct
-    public void initialize() {}
 
     public User getCurrentUser() {
         return currentUser;
@@ -47,12 +47,12 @@ public class LoginView {
         this.password = password;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public UserDao getUserDao() {
+        return userDao;
     }
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 
     public String login() {
@@ -68,13 +68,5 @@ public class LoginView {
             }
         }
         return "noSuchUser";
-    }
-
-    public void addUser(String name, String password) {
-        userDao.addUser(new User(5,name,password,new Role(1,"admin")));
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
     }
 }
