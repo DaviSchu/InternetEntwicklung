@@ -21,7 +21,7 @@
 					<h:inputSecret value="#{loginView.password}" />
 
 				</p:panelGrid>
-				<h:commandButton value="#{labels.buttonLogin}" action="#{loginView.login}" />
+				<h:commandButton value="#{labels.buttonLogIn}" action="#{loginView.login}" />
 
 				<h:dataTable value="#{userDao.findAllUsers()}" var="user">
 					<h:column>
