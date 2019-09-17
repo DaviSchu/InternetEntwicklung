@@ -21,9 +21,7 @@ public class LoginView {
     private User currentUser;
 
     @PostConstruct
-    public void intialize() {
-        userList = userDao.findAllUsers();
-    }
+    public void initialize() {}
 
     public User getCurrentUser() {
         return currentUser;
@@ -58,6 +56,8 @@ public class LoginView {
     }
 
     public String login() {
+
+        userList = userDao.findAllUsers();
 
         for(User u: userList) {
             if(u.getUsername().matches(userName)) {
