@@ -9,5 +9,8 @@ public class I18nUtil {
     public static String getInvalidPasswordConfirmation () {
         return messages.getString("passwordsNotEqual");
     }
+    public static String getInvalidUserConfirmation () {
+        return messages.getString("usernameExists");
+    }
 
 }
