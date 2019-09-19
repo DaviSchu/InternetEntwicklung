@@ -1,9 +1,8 @@
 package de.stl.saar.internetentw1.view;
 
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
-import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
-import de.stl.saar.internetentw1.session.CurrentUser;
+import de.stl.saar.internetentw1.session.UserSession;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -17,8 +16,8 @@ public class LoginView {
     @ManagedProperty("#{userDao}")
     private UserDao userDao;
 
-    @ManagedProperty("#{currentUser}")
-    private CurrentUser currentUser;
+    @ManagedProperty("#{userSession}")
+    private UserSession userSession;
 
     private String userName;
     private String password;
@@ -47,12 +46,12 @@ public class LoginView {
         this.userDao = userDao;
     }
 
-    public CurrentUser getCurrentUser() {
-        return currentUser;
+    public UserSession getUserSession() {
+        return userSession;
     }
 
-    public void setCurrentUser(CurrentUser currentUser) {
-        this.currentUser = currentUser;
+    public void setUserSession(UserSession userSession) {
+        this.userSession = userSession;
     }
 
     public String login() {
@@ -63,7 +62,7 @@ public class LoginView {
         for(User u: userList) {
             if(u.getUsername().matches(userName)) {
                 if (u.getPassword().matches(password)) {
-                    currentUser.setUser(u);
+                    userSession.setUser(u);
                     userName="";
                     password="";
                     return "overview";
@@ -74,7 +73,7 @@ public class LoginView {
     }
 
     public void logOut(){
-        currentUser.setUser(null);
+        userSession.setUser(null);
     }
 
 }
