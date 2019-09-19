@@ -5,11 +5,13 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <body>
-<ui:composition>
-    <h1> SmartMensa </h1>
-    <h:outputLabel value="#{labels.labelLanguage}"/>
-    <ui:include src="/SmartMensa/language.xhtml"/>
-</ui:composition>
+    <ui:composition>
+        <h:panelGrid columns="1">
+            <h1> SmartMensa </h1>
+            <h:outputLabel value="#{labels.labelLanguage}"/>
+            <ui:include src="/SmartMensa/language.xhtml"/>
+        </h:panelGrid>
+    </ui:composition>
 </body>
 
 </html>
