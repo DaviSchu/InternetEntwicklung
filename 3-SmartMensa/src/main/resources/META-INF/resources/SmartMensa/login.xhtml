@@ -11,7 +11,7 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name="content">
-            <h1>Login</h1>
+            <h1>#{labels.labelLogIn}</h1>
             <h:form>
                 <p:panelGrid columns="3">
                     <h:outputText value="#{labels.labelUsername}:"/>
@@ -30,21 +30,7 @@
             <h:form>
                 <h:commandButton value="#{labels.buttonRegistration}" action="register"/>
 			</h:form>
-            <br/>
-            <h:dataTable value="#{userDao.findAllUsers()}" var="user">
-                <h:column>
-                    <f:facet name="Header">Name</f:facet>
-                    #{user.username}
-                </h:column>
-                <h:column>
-                    <f:facet name="Header">Passwort</f:facet>
-                    #{user.password}
-                </h:column>
-                <h:column>
-                    <f:facet name="Header">Passwort</f:facet>
-                    #{user.role.roleName}
-                </h:column>
-            </h:dataTable>
+
         </ui:define>
 
     </ui:composition>

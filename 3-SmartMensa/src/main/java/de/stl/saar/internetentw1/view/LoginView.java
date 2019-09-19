@@ -4,7 +4,6 @@ import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -59,14 +58,18 @@ public class LoginView {
 
         userList = userDao.findAllUsers();
 
+
         for(User u: userList) {
             if(u.getUsername().matches(userName)) {
-                if(u.getPassword().matches(password)) {
+                if (u.getPassword().matches(password)) {
                     currentUser = u;
                     return "overview";
                 }
+
+
             }
         }
-        return "noSuchUser";
+        return ""
     }
+
 }
