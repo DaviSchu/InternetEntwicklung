@@ -69,7 +69,7 @@ public class LoginView {
 
             }
         }
-        return ""
+        return "";
     }
 
 }
