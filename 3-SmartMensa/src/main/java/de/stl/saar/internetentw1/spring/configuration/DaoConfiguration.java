@@ -17,7 +17,6 @@ public class DaoConfiguration {
 	private UserDao userDao = new UserDaoImpl();
 	private DishDao dishDao = new DishDaoImpl();
 	private RoleDao roleDao = new RoleDaoImpl();
-	private LoginView loginView = new LoginView();
 
 	@Bean(name = "dishDao")
 	public DishDao createDishDao() {

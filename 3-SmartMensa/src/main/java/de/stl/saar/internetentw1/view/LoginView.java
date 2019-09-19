@@ -3,6 +3,7 @@ package de.stl.saar.internetentw1.view;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
+import de.stl.saar.internetentw1.session.CurrentUser;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -16,17 +17,11 @@ public class LoginView {
     @ManagedProperty("#{userDao}")
     private UserDao userDao;
 
+    @ManagedProperty("#{currentUser}")
+    private CurrentUser currentUser;
+
     private String userName;
     private String password;
-    private User currentUser;
-
-    public User getCurrentUser() {
-        return currentUser;
-    }
-
-    public void setCurrentUser(User currentUser) {
-        this.currentUser = currentUser;
-    }
 
     public String getUserName() {
         return userName;
@@ -52,6 +47,14 @@ public class LoginView {
         this.userDao = userDao;
     }
 
+    public CurrentUser getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(CurrentUser currentUser) {
+        this.currentUser = currentUser;
+    }
+
     public String login() {
 
         List<User> userList = userDao.findAllUsers();
@@ -60,18 +63,18 @@ public class LoginView {
         for(User u: userList) {
             if(u.getUsername().matches(userName)) {
                 if (u.getPassword().matches(password)) {
-                    currentUser = u;
-                    this.userName="";
+                    currentUser.setUser(u);
+                    userName="";
+                    password="";
                     return "overview";
                 }
             }
         }
-        return "";
+        return "wrongLogin";
     }
 
     public void logOut(){
-        this.currentUser=null;
-        this.userName="";
+        currentUser.setUser(null);
     }
 
 }
