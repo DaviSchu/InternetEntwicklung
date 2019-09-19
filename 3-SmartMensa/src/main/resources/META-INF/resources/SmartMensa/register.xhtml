@@ -18,13 +18,14 @@
 
                     <h:outputText value="#{labels.labelPassword}:" />
                     <h:inputSecret value="#{registerView.password}" id="txtPassword"
-                                   required="true" requiredMessage="#{msg.passwordRequired}"/>
+                                   required="true" requiredMessage="#{msg.passwordRequired}" />
                     <h:message for="txtPassword" errorStyle="color: red" />
 
                     <h:outputText value="#{labels.labelConfirmPassword}:" />
                     <h:inputSecret value="#{registerView.confirmPassword}" id="txtPasswordConfirmation"
                                    required="true" requiredMessage="#{msg.passwordConfirmationRequired}" >
-                        <f:validator validatorId="PasswordConfirmation" />
+                        <f:validator validatorId="passwordConfirmation" />
+                        <f:attribute name="password" value="#{registerView.password}"/>
                     </h:inputSecret>
                     <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
 

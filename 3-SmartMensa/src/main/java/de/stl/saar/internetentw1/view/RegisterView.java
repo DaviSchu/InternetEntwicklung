@@ -6,8 +6,10 @@ import de.stl.saar.internetentw1.model.User;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean
+@SessionScoped
 public class RegisterView {
 
     @ManagedProperty("#{userDao}")
