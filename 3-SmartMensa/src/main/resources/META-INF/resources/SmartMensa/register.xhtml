@@ -26,7 +26,9 @@
                                    required="true" requiredMessage="#{msg.passwordConfirmationRequired}"/>
                     <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
 
-                    <h:commandButton value="#{labels.buttonRegistration}" actionListener="#{registerView.register()}"/>
+                    <h:commandButton value="#{labels.buttonRegistration}"
+                                     actionListener="#{registerView.register()}"
+                                     action="registerSuccess"/>
                 </h:panelGrid>
             </h:form>
             <h:form>

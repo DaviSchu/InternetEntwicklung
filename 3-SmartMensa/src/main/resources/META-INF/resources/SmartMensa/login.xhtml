@@ -16,8 +16,7 @@
                 <p:panelGrid columns="3">
                     <h:outputText value="#{labels.labelUsername}:"/>
                     <h:inputText value="#{loginView.userName}" id="txtUsername"
-                                 required="true" requiredMessage="#{msg.usernameRequired}"
-                                 validatorMessage="#{}"/>
+                                 required="true" requiredMessage="#{msg.usernameRequired}" />
                     <h:message for="txtUsername" errorStyle="color: red"/>
 
                     <h:outputText value="#{labels.labelPassword}:"/>

@@ -16,8 +16,6 @@ public class LoginView {
     @ManagedProperty("#{userDao}")
     private UserDao userDao;
 
-    private List<User> userList;
-
     private String userName;
     private String password;
     private User currentUser;
@@ -56,7 +54,7 @@ public class LoginView {
 
     public String login() {
 
-        userList = userDao.findAllUsers();
+        List<User> userList = userDao.findAllUsers();
 
 
         for(User u: userList) {
