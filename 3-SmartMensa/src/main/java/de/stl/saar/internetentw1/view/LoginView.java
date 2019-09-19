@@ -61,13 +61,17 @@ public class LoginView {
             if(u.getUsername().matches(userName)) {
                 if (u.getPassword().matches(password)) {
                     currentUser = u;
+                    this.userName="";
                     return "overview";
                 }
-
-
             }
         }
         return "";
+    }
+
+    public void logOut(){
+        this.currentUser=null;
+        this.userName="";
     }
 
 }
