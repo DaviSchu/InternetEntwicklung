@@ -19,5 +19,12 @@
             <supported-locale>en</supported-locale>
         </locale-config>
     </application>
-
+    <validator>
+        <validator-id>
+            passwordConfirmationValidator
+        </validator-id>
+        <validator-class>
+            de.stl.
+        </validator-class>
+    </validator>
 </faces-config> 
