@@ -23,7 +23,9 @@
 
                     <h:outputText value="#{labels.labelConfirmPassword}:" />
                     <h:inputSecret value="#{registerView.confirmPassword}" id="txtPasswordConfirmation"
-                                   required="true" requiredMessage="#{msg.passwordConfirmationRequired}"/>
+                                   required="true" requiredMessage="#{msg.passwordConfirmationRequired}" >
+                        <f:validator validatorId="PasswordConfirmation" />
+                    </h:inputSecret>
                     <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
 
                     <h:commandButton value="#{labels.buttonRegistration}"

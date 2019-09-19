@@ -1,9 +1,7 @@
 package de.stl.saar.internetentw1.validators;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import de.stl.saar.internetentw1.utils.I18nUtil;
 import de.stl.saar.internetentw1.utils.JsfUtils;
-import org.omnifaces.util.Faces;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
