@@ -12,8 +12,8 @@
         <ui:define name = "content">
             <h:form>
                 <h:panelGrid columns="1">
-                    <h:outputText value="#{labels.labelWelcome} #{currentUser.user.username}" />
-                    <c:if test="#{currentUser.user.role.roleId eq 1}">
+                    <h:outputText value="#{labels.labelWelcome} #{userSession.user.username}" />
+                    <c:if test="#{userSession.user.role.roleId eq 1}">
                        <h:commandLink value="#{labels.buttonDishes}" action="dishes" />
                       <h:commandLink value="#{labels.buttonUserAdministration}" action="userAdministration" />
                     </c:if>
