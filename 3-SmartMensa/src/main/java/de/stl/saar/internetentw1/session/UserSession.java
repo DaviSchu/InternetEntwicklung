@@ -2,7 +2,7 @@ package de.stl.saar.internetentw1.session;
 
 import de.stl.saar.internetentw1.model.User;
 
-public class CurrentUser {
+public class UserSession {
 
     private User user;
 

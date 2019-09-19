@@ -11,7 +11,7 @@
 
         <ui:define name = "content">
             <h:form>
-                <h:outputText value="#{labels.labelWelcome} #{loginView.currentUser.username}" /><br/>
+                <h:outputText value="#{labels.labelWelcome} #{loginView.userSession.username}" /><br/>
                 <h:commandButton value="#{labels.buttonMenu}" action="menu" /><br/>
                 <h:commandButton value="#{labels.buttonLogOut}" action="login" actionListener="#{loginView.logOut}" /><br/>
                 <h:commandButton value="#{labels.buttonChangeProfile}" action="changeProfile" /><br/>
