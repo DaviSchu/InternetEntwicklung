@@ -1,5 +1,6 @@
 package de.stl.saar.internetentw1.validators;
 
+import de.stl.saar.internetentw1.dao.classes.UserDaoImpl;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.User;
 import de.stl.saar.internetentw1.utils.I18nUtil;
@@ -14,15 +15,15 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.List;
 
-@FacesValidator("passwordConfirmation")
+@FacesValidator("userConfirmation")
 public class UserConfirmation implements Validator {
 
-
-    private UserDao userDao;
+    private UserDaoImpl userDao;
 
     @Override
     public void validate(FacesContext facesContext, UIComponent uiComponent, Object o) throws ValidatorException {
         String userConfirmation = (String) o;
+
 
         List<User> userList = userDao.findAllUsers();
 

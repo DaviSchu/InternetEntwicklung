@@ -99,7 +99,7 @@ public class UserDaoImpl implements UserDao {
 		final List<User> users = new ArrayList<>(userCollection);
 		return users;
 	}
-	
+
 	@Override
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
