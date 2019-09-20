@@ -10,6 +10,26 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <h:dataTable var="dishes"
+                         value="#{dishDao.findAllDishes()}"
+                         id="mydishes">
+                <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.number}" /></f:facet>
+                    <h:outputText value="#{dishes.dishID}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.name}" /></f:facet>
+                    <h:outputText value="#{dishes.dishName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.price}" /></f:facet>
+                    <h:outputText value="#{dishes.price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>
+                    <h:outputText value="#{dishes.category}"/>
+                </h:column>
+            </h:dataTable>
             <h:form>
                 <h:commandButton value="#{labels.buttonChangeDishes}" action="changeDishes" /><br/>
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
