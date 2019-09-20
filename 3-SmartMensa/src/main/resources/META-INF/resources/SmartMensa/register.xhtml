@@ -14,7 +14,7 @@
                     <h:outputText value="#{labels.labelUsername}" />
                     <h:inputText value="#{registerView.userName}" id="txtUsername"
                                  required="true" requiredMessage="#{msg.usernameRequired}" >
-                    <f:validator validatorId="PasswordConfirmation" />
+                    <f:validator validatorId="passwordConfirmation" />
                     </h:inputText>
                     <h:message for="txtUsername" errorStyle="color: red" />
 
