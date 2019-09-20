@@ -17,7 +17,7 @@ import java.util.List;
 @FacesValidator("passwordConfirmation")
 public class UserConfirmation implements Validator {
 
-    @ManagedProperty("#{userDao}")
+
     private UserDao userDao;
 
     @Override
