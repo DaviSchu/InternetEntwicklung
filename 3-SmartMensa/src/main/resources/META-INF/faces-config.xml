@@ -27,4 +27,12 @@
             de.stl.saar.internetentw1.validators.PasswordConfirmation
         </validator-class>
     </validator>
+    <validator>
+        <validator-id>
+            userConfirmationValidator
+        </validator-id>
+        <validator-class>
+            de.stl.saar.internetentw1.validators.UserConfirmation
+        </validator-class>
+    </validator>
 </faces-config> 

@@ -11,7 +11,7 @@
         <ui:define name = "content">
             <h:form>
                 <h:panelGrid columns="3">
-                    <h:outputText value="#{labels.labelUsername}" />
+                    <h:outputText value="#{labels.username}" />
                     <h:inputText value="#{registerView.userName}" id="txtUsername"
                                  required="true" requiredMessage="#{msg.usernameRequired}" >
                     <f:validator validatorId="passwordConfirmation" />
@@ -23,7 +23,7 @@
                                    required="true" requiredMessage="#{msg.passwordRequired}" />
                     <h:message for="txtPassword" errorStyle="color: red" />
 
-                    <h:outputText value="#{labels.labelConfirmPassword}:" />
+                    <h:outputText value="#{labels.confirmPassword}:" />
                     <h:inputSecret value="#{registerView.confirmPassword}" id="txtPasswordConfirmation"
                                    required="true" requiredMessage="#{msg.passwordConfirmationRequired}" >
                         <f:validator validatorId="passwordConfirmation" />
@@ -37,7 +37,7 @@
                 </h:panelGrid>
             </h:form>
             <h:form>
-                <h:commandButton value="#{labels.labelBack}" action="login" />
+                <h:commandButton value="#{labels.back}" action="login" />
             </h:form>
         </ui:define>
 

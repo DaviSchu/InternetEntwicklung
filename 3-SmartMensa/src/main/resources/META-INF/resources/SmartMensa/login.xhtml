@@ -12,10 +12,10 @@
 
         <ui:define name="content">
             <h:panelGrid columns="1">
-            <h1>#{labels.labelLogIn}</h1>
+            <h1>#{labels.logIn}</h1>
             <h:form>
                 <p:panelGrid columns="3">
-                    <h:outputText value="#{labels.labelUsername}:"/>
+                    <h:outputText value="#{labels.username}:"/>
                     <h:inputText value="#{loginView.userName}" id="txtUsername"
                                  required="true" requiredMessage="#{msg.usernameRequired}" />
                     <h:message for="txtUsername" errorStyle="color: red"/>
