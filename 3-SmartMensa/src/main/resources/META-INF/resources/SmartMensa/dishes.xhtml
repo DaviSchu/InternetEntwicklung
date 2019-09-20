@@ -33,8 +33,10 @@
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.buttonChangeDishes}" action="changeDishes">
-                        <f:param name="oldDishName" value="#{dishes.dishName}" />
                         <f:param name="oldDishId" value="#{dishes.dishId}" />
+                        <f:param name="oldDishName" value="#{dishes.dishName}" />
+                        <f:param name="oldDishPrice" value="#{dishes.price}"/>
+                        <f:param name="oldDishCategory" value="#{dishes.category.toString()}"/>
                     </h:commandButton>
                 </h:column>
             </h:dataTable>
