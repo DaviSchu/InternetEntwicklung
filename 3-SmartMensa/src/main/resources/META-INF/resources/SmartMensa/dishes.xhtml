@@ -10,12 +10,14 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
-            <h:dataTable var="dishes"
-                         value="#{dishDao.findAllDishes()}"
+            <h:panelGrid columns="1">
+            <h1>#{labels.manageDishes}</h1>
+            <h:dataTable value="#{dishDao.findAllDishes()}"
+                         var="dishes"
                          id="mydishes">
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.number}" /></f:facet>
-                    <h:outputText value="#{dishes.dishID}"/>
+                    <h:outputText value="#{dishes.dishId}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.name}" /></f:facet>
@@ -27,13 +29,20 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>
-                    <h:outputText value="#{dishes.category}"/>
+                    <h:outputText value="#{dishes.category.toString()}"/>
+                </h:column>
+                <h:column>
+                    <h:commandButton value="#{labels.buttonChangeDishes}" action="changeDishes">
+                        <f:param name="oldDishName" value="#{dishes.dishName}" />
+                        <f:param name="oldDishId" value="#{dishes.dishId}" />
+                    </h:commandButton>
                 </h:column>
             </h:dataTable>
             <h:form>
-                <h:commandButton value="#{labels.buttonChangeDishes}" action="changeDishes" /><br/>
-                <h:commandButton value="#{labels.buttonBack}" action="overview" />
+                    <h:commandButton value="#{labels.buttonNew}" action="changeDishes" /><br/>
+                    <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:form>
+            </h:panelGrid>
         </ui:define>
 
     </ui:composition>
