@@ -10,10 +10,43 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
-            <h:form>
-                <h:commandButton value="#{labels.buttonSave}" action="dishes" />
-                <h:commandButton value="#{labels.buttonCancel}" action="dishes" />
-            </h:form>
+            <h:panelGrid columns="1">
+                <h1>#{labels.createAndChangeDish}</h1>
+                <h:graphicImage value="#{dishView.imageName}"/>
+                <h:panelGrid columns="3">
+                    <h:outputText value="#{labels.name}" />
+                    <h:inputText value="#{dishView.dishName}" id="txtDishName"
+                                 required="true" requiredMessage="#{msg.dishNameRequired}" >
+                    </h:inputText>
+                    <h:message for="txtDishName" errorStyle="color: red" />
+
+                    <h:outputText value="#{labels.costs}" />
+                    <h:inputText value="#{dishView.price}" id="txtDishPrice"
+                                 required="true" requiredMessage="#{msg.dishPriceRequired}" >
+                                <f:validateDoubleRange minimum="0.50" maximum="6.00"/>
+                    </h:inputText>
+                    <h:message for="txtDishPrice" errorStyle="color: red" />
+
+                    <h:outputText value="#{labels.category}" />
+                    <h:selectOneListbox value="#{dishView.category}"
+                                        id="txtDishCategory"
+                                        required="true"
+                                        requiredMessage="#{msg.dishCategoryRequired}">
+                        <f:selectItems value="#{dishView.categorys}"
+                                       var="name"
+                                       itemLabel="#{name.categoryName}"
+                                       itemValue="#{name}"/>
+                    </h:selectOneListbox>
+                    <h:message for="txtDishCategory" errorStyle="color: red" />
+
+                    <h:commandButton value="#{labels.buttonSave}"
+                                     actionListener="#{dishView.saveDish}"
+                                     action="dishes"/>
+                    <h:form>
+                        <h:commandButton value="#{labels.buttonCancel}" action="dishes" />
+                    </h:form>
+                </h:panelGrid>
+            </h:panelGrid>
         </ui:define>
 
 
