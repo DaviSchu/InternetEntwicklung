@@ -26,11 +26,19 @@ public class DishView {
         return Category.values();
     }
 
-    public void saveDish() {
+    public String saveDish() {
 
         Dish newDish = new Dish(dishName, price, category, imageName);
         dishDao.addDish(newDish);
 
+        return "dishes";
+    }
+
+    public String delete(int dishId) {
+
+        dishDao.removeDish(dishId);
+
+        return "";
     }
 
     public DishDao getDishDao() {

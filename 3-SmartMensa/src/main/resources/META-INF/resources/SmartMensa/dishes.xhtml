@@ -38,6 +38,10 @@
                     </h:commandButton>
                     </h:form>
                 </h:column>
+                <h:column>
+                    <h:commandButton value="#{labels.delete}"
+                                     action="#{dishView.delete(dishes.dishId)}"/>
+                </h:column>
             </h:dataTable>
             <h:form>
                     <h:commandButton value="#{labels.buttonNew}" action="changeDishes" /><br/>
