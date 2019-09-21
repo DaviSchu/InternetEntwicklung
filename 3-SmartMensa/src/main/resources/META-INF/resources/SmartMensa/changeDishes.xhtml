@@ -25,7 +25,7 @@
                     <h:inputText value="#{dishView.price}" id="txtDishPrice"
                                  required="true"
                                  requiredMessage="#{msg.dishPriceRequired}"
-                                 validatorMessage="#{msg.invalidPrice}"/>
+                                 validatorMessage="#{msg.invalidPrice}">
                                 <f:validateDoubleRange minimum="0.50" maximum="6.00"/>
                     </h:inputText>
                     <h:message for="txtDishPrice" errorStyle="color: red" />
