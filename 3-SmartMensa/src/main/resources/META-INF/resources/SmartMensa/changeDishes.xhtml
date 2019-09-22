@@ -35,7 +35,7 @@
                                         id="txtDishCategory"
                                         required="true"
                                         requiredMessage="#{msg.dishCategoryRequired}">
-                        <f:selectItems value="#{dishView.categorys}"
+                        <f:selectItems value="#{dishView.categories}"
                                        var="name"
                                        itemLabel="#{name.categoryName}"
                                        itemValue="#{name}"/>
@@ -45,7 +45,7 @@
                 </h:panelGrid>
                 <h:form>
                     <h:commandButton value="#{labels.buttonSave}"
-                                     action="#{dishView.saveDish}" />
+                                     action="#{dishView.saveDish()}"/>
                     <h:commandButton value="#{labels.buttonCancel}"
                                      action="dishes" />
                 </h:form>

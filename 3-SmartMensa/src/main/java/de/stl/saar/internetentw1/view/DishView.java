@@ -20,14 +20,15 @@ public class DishView {
     private String dishName;
     private double price;
     private Category category;
+    private Category[] categories;
     private String imageName;
 
-    public Category[] getCategorys() {
+    public Category[] getCategories() {
         return Category.values();
     }
 
     public String saveDish() {
-
+        print();
         Dish newDish = new Dish(dishName, price, category, imageName);
         dishDao.addDish(newDish);
 
@@ -39,6 +40,15 @@ public class DishView {
         dishDao.removeDish(dishId);
 
         return "";
+    }
+
+    public void print() {
+        System.out.println(dishId);
+        System.out.println(dishName);
+        System.out.println(price);
+        System.out.println(category);
+        System.out.println(categories);
+        System.out.println(imageName);
     }
 
     public DishDao getDishDao() {
