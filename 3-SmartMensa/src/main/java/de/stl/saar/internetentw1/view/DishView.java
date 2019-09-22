@@ -35,9 +35,9 @@ public class DishView {
         return "dishes";
     }
 
-    public String delete(int dishId) {
+    public String refresh() {
 
-        dishDao.removeDish(dishId);
+        //dishDao.removeDish(dishId);
 
         return "";
     }
