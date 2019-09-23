@@ -3,42 +3,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
-
+      xmlns:o="http://omnifaces.org/ui">
 
 <h:body>
     <ui:composition template="template.xhtml">
         <ui:define name = "content">
             <h:form>
-                <h:panelGrid columns="3">
+                <h:panelGrid columns="4">
                     <h:outputText value="#{labels.username}" />
                     <h:inputText value="#{registerView.userName}" id="txtUsername"
-                                 required="true" requiredMessage="#{msg.usernameRequired}" >
-                    <f:validator validatorId="userConfirmation" />
-                    </h:inputText>
+                                 required="true" requiredMessage="#{msg.usernameRequired}" />
                     <h:message for="txtUsername" errorStyle="color: red" />
+                    <h:panelGroup />
 
                     <h:outputText value="#{labels.userPassword}:" />
                     <h:inputSecret value="#{registerView.password}" id="txtPassword"
                                    required="true" requiredMessage="#{msg.passwordRequired}" />
                     <h:message for="txtPassword" errorStyle="color: red" />
+                    <h:panelGroup />
 
                     <h:outputText value="#{labels.confirmPassword}:" />
                     <h:inputSecret value="#{registerView.confirmPassword}" id="txtPasswordConfirmation"
-                                   required="true" requiredMessage="#{msg.passwordConfirmationRequired}" >
-                        <f:validator validatorId="passwordConfirmation" />
-                        <f:attribute name="password" value="#{registerView.password}"/>
-                    </h:inputSecret>
+                                   required="true" requiredMessage="#{msg.passwordConfirmationRequired}" />
                     <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
-
+                    <o:validateEqual components="txtPassword txtPasswordConfirmation"
+                                     message="Passwords do not match!" showMessageFor="txtPasswordConfirmation" />
                     <h:commandButton value="#{labels.buttonRegistration}"
                                      actionListener="#{registerView.register()}"
                                      action="registerSuccess"/>
                 </h:panelGrid>
             </h:form>
-            <h:form>
-                <h:commandButton value="#{labels.back}" action="login" />
-            </h:form>
+            <h:panelGrid columns="1">
+                <h:form>
+                    <h:commandButton value="#{labels.back}" action="login" />
+                </h:form>
+            </h:panelGrid>
         </ui:define>
 
     </ui:composition>

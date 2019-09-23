@@ -1,6 +1,5 @@
 package de.stl.saar.internetentw1.spring.configuration;
 
-import de.stl.saar.internetentw1.view.LoginView;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
