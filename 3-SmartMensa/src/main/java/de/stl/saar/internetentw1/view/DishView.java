@@ -7,6 +7,7 @@ import de.stl.saar.internetentw1.model.Dish;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import java.util.List;
 
 
 @ManagedBean

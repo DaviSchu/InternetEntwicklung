@@ -20,19 +20,19 @@ import de.stl.saar.internetentw1.utils.RandomUtils;
  */
 public class DishDaoImpl implements DishDao {
 	private Map<Integer, Dish> dishTable;
-	
+
 	public DishDaoImpl() {
 		dishTable = new HashMap<>();
-		final Dish dish1 = new Dish("Baumkuchen", 2.0, Category.DESSERT, "baumkuchen");
-		final Dish dish2 = new Dish("Creme Brulee", 2.5, Category.DESSERT, "cremeBrulee");
-		final Dish dish3 = new Dish("Flammkuchen", 7.5, Category.MAIN_DISH, "flammkuchen");
-		final Dish dish4 = new Dish("Grießnockerl-Suppe", 4, Category.SOUP, "griessnockerlsuppe");
-		final Dish dish5 = new Dish("Pudding", 2, Category.DESSERT, "pudding");
-		final Dish dish6 = new Dish("Rindfleischsuppe", 3.5, Category.SOUP, "rindfleischsuppe");
-		final Dish dish7 = new Dish("Rumänischer Salat", 3.5, Category.SALAD, "rumaenischerSalat");
-		final Dish dish8 = new Dish("Einfach nur Salat", 3.5, Category.SALAD, "salat");
-		final Dish dish9 = new Dish("Wiener Schnitzel", 7.0, Category.MAIN_DISH, "schnitzel");
-		final Dish dish10 = new Dish("Tomate-Mozarella", 4.0, Category.SALAD, "tomateMozarella");
+		final Dish dish1 = new Dish(1,"Baumkuchen", 2.0, Category.DESSERT, "baumkuchen");
+		final Dish dish2 = new Dish(2,"Creme Brulee", 2.5, Category.DESSERT, "cremeBrulee");
+		final Dish dish3 = new Dish(3,"Flammkuchen", 7.5, Category.MAIN_DISH, "flammkuchen");
+		final Dish dish4 = new Dish(4,"Grießnockerl-Suppe", 4, Category.SOUP, "griessnockerlsuppe");
+		final Dish dish5 = new Dish(5,"Pudding", 2, Category.DESSERT, "pudding");
+		final Dish dish6 = new Dish(6,"Rindfleischsuppe", 3.5, Category.SOUP, "rindfleischsuppe");
+		final Dish dish7 = new Dish(7,"Rumänischer Salat", 3.5, Category.SALAD, "rumaenischerSalat");
+		final Dish dish8 = new Dish(8,"Einfach nur Salat", 3.5, Category.SALAD, "salat");
+		final Dish dish9 = new Dish(9,"Wiener Schnitzel", 7.0, Category.MAIN_DISH, "schnitzel");
+		final Dish dish10 = new Dish(10,"Tomate-Mozarella", 4.0, Category.SALAD, "tomateMozarella");
 		addDish(dish1);
 		addDish(dish2);
 		addDish(dish3);

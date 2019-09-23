@@ -10,6 +10,7 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <h:form>
             <h:panelGrid columns="1">
             <h1>#{labels.manageUser}</h1>
             <h:dataTable value="#{userDao.findAllUsers()}"
@@ -28,22 +29,19 @@
                     <h:outputText value="#{users.role.roleName}"/>
                 </h:column>
                 <h:column>
-                    <h:form>
-                        <h:commandButton value="#{labels.buttonChangeUser}"
+                    <h:commandButton value="#{labels.buttonChangeUser}"
                                          action="createUser">
-                        </h:commandButton>
-                    </h:form>
+                    </h:commandButton>
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.delete}"
                                      action="userAdministration"/>
                 </h:column>
             </h:dataTable>
-            <h:form>
                 <h:commandButton value="#{labels.buttonAddUser}" action="createUser" /><br/>
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
-            </h:form>
             </h:panelGrid>
+            </h:form>
         </ui:define>
 
     </ui:composition>

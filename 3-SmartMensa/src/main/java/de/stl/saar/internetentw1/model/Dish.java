@@ -7,8 +7,9 @@ public class Dish {
 	private Category category;
 	private String imageName;
 	
-	public Dish(String dishName, double price, Category category, String imageName) {
+	public Dish(int dishId, String dishName, double price, Category category, String imageName) {
 		super();
+		this.dishId= dishId;
 		this.dishName = dishName;
 		this.price = price;
 		this.category = category;
