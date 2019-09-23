@@ -30,7 +30,7 @@ public class DishView {
 
     public String saveDish() {
         print();
-        Dish newDish = new Dish(dishName, price, category, imageName);
+        Dish newDish = new Dish(dishId, dishName, price, category, imageName);
         dishDao.addDish(newDish);
 
         return "dishes";
