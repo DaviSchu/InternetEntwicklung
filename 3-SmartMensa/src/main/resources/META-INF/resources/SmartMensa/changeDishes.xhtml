@@ -14,7 +14,7 @@
             <h:panelGrid columns="1">
 
                 <h1>#{labels.createAndChangeDish}</h1>
-                <h:graphicImage value="#{dishView.imageName}"/>
+                <h:graphicImage library="images" name="#{dishView.imageName}.jpg"/>
                 <h:panelGrid columns="3">
                     <h:outputText value="#{labels.name}" />
                     <h:inputText value="#{dishView.dishName}" id="txtDishName"

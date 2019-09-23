@@ -23,15 +23,20 @@ public class DishView {
     private Category category;
     private Category[] categories;
     private String imageName;
+    private Dish dish;
 
     public Category[] getCategories() {
         return Category.values();
     }
 
     public String saveDish() {
-        print();
         Dish newDish = new Dish(dishName, price, category, imageName);
-        dishDao.addDish(newDish);
+        if (dish != null) {
+            newDish.setDishId(dishId);
+            dishDao.replaceDish(newDish);
+        } else {
+            dishDao.addDish(newDish);
+        }
 
         return "dishes";
     }
@@ -43,6 +48,24 @@ public class DishView {
         System.out.println(category);
         System.out.println(categories);
         System.out.println(imageName);
+    }
+
+    public void loadDish(Dish dish) {
+        this.dish = dish;
+        dishId = dish.getDishId();
+        dishName = dish.getDishName();
+        price = dish.getPrice();
+        category = dish.getCategory();
+        imageName = dish.getImageName();
+    }
+
+    public void purge() {
+        this.dish = null;
+        dishId = 0;
+        dishName = null;
+        price = 0.0;
+        category = null;
+        imageName = "";
     }
 
     public DishDao getDishDao() {

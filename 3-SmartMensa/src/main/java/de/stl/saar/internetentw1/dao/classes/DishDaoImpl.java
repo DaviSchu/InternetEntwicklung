@@ -95,6 +95,11 @@ public class DishDaoImpl implements DishDao {
 	}
 
 	@Override
+	public void replaceDish(Dish dish) {
+		dishTable.put(dish.getDishId(), dish);
+	}
+
+	@Override
 	public List<Dish> findAllDishes() {
 		final Collection<Dish> dishCollection = dishTable.values();
 		final List<Dish> dishes = new ArrayList<>(dishCollection);
