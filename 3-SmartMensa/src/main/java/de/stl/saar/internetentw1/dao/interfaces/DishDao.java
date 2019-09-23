@@ -25,4 +25,10 @@ public interface DishDao {
 	 */
 	List<Dish> findAllDishes();
 
+	/**
+	 * Setzt ein übergebenes Dish an die Stelle seiner Id
+	 * @param dish das einzufügende Dish
+	 */
+	void replaceDish(Dish dish);
+
 }
