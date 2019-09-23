@@ -25,12 +25,10 @@ public class UserDaoImpl implements UserDao {
 
 	private Map<Integer, User> userTable;
 	private RoleDao roleDao;
-	private int counter;
 
 	@PostConstruct
 	public void initialize() {
 		userTable = new HashMap<>();
-		this.counter=0;
 		final Role adminRole = roleDao.findRoleByName("admin");
 		final Role userRole = roleDao.findRoleByName("user");
 		final User user1 = new User("colbertz", "1234", adminRole);
@@ -43,10 +41,9 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(final User user) {
-		counter++;
-		user.setUserId(counter);
 
-		userTable.put(counter, user);
+		user.setUserId(userTable.size()+1);
+		userTable.put(userTable.size()+1, user);
 	}
 	
 	/**
@@ -83,10 +80,13 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public void removeUser(final int userId) {
-
-		userTable.remove(userId);
-		assignNewId(userId);
-		counter--;
+		User user;
+		for (int i = userId; i < userTable.size(); i++) {
+			user = userTable.get(i+1);
+			user.setUserId(i);
+			userTable.put(i,user);
+		}
+		userTable.remove(userTable.size());
 	}
 
 	@Override
@@ -96,19 +96,9 @@ public class UserDaoImpl implements UserDao {
 		return users;
 	}
 
-	public void assignNewId (int id)
-	{
-		for(int i= id+1; i<=counter; i++ ) {
-			userTable.get(i).setUserId(i-1);
-		}
-	}
-
 	@Override
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
 	}
 
-	public int getCounter() {
-		return counter;
-	};
 }

@@ -101,9 +101,4 @@ public class DishDaoImpl implements DishDao {
 		return dishes;
 	}
 
-	public void assignNewId (int id)
-	{
-
-	}
-
 }
