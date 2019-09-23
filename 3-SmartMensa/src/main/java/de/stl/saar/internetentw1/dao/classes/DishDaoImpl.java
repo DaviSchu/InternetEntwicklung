@@ -20,10 +20,8 @@ import de.stl.saar.internetentw1.utils.RandomUtils;
  */
 public class DishDaoImpl implements DishDao {
 	private Map<Integer, Dish> dishTable;
-	private int counter;
 
 	public DishDaoImpl() {
-		this.counter=0;
 		dishTable = new HashMap<>();
 		final Dish dish1 = new Dish("Baumkuchen", 2.0, Category.DESSERT, "baumkuchen");
 		final Dish dish2 = new Dish("Creme Brulee", 2.5, Category.DESSERT, "cremeBrulee");
@@ -49,9 +47,8 @@ public class DishDaoImpl implements DishDao {
 
 	@Override
 	public void addDish(final Dish dish) {
-		counter++;
-		dish.setDishId(counter);
-		dishTable.put(counter, dish);
+		dish.setDishId(dishTable.size()+1);
+		dishTable.put(dishTable.size()+1, dish);
 	}
 	
 	/**
@@ -88,10 +85,13 @@ public class DishDaoImpl implements DishDao {
 	
 	@Override
 	public void removeDish(final int dishId) {
-
-		dishTable.remove(dishId);
-		assignNewId(dishId);
-		counter--;
+		Dish dish;
+		for (int i = dishId; i < dishTable.size(); i++) {
+			dish = dishTable.get(i+1);
+			dish.setDishId(i);
+			dishTable.put(i,dish);
+		}
+		dishTable.remove(dishTable.size());
 	}
 
 	@Override
@@ -103,13 +103,7 @@ public class DishDaoImpl implements DishDao {
 
 	public void assignNewId (int id)
 	{
-		for(int i= id+1; i<=counter; i++ ) {
-			dishTable.get(i).setDishId(i-1);
-		}
-	}
 
-	public int getCounter() {
-		return counter;
-	};
+	}
 
 }
