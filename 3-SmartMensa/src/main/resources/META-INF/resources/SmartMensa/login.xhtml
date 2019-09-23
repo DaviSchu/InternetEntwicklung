@@ -12,6 +12,9 @@
 
         <ui:define name="content">
             <h1>#{labels.logIn}</h1>
+            <h:messages globalOnly="true"
+                        showDetail="true"
+                        showSummary="false"/>
             <h:form>
                 <p:panelGrid columns="3">
                     <h:outputText value="#{labels.username}:"/>
@@ -25,6 +28,7 @@
                     <h:message for="txtPassword" errorStyle="color: red"/>
 
                     <h:commandButton value="#{labels.buttonLogIn}" action="#{loginView.login}"/>
+
                 </p:panelGrid>
             </h:form>
 

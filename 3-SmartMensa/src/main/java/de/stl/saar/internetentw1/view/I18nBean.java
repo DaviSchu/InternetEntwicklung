@@ -23,7 +23,9 @@ public class I18nBean implements Serializable{
         languages = new LinkedHashMap<>();
         languages.put("Deutsch", Locale.GERMAN);
         languages.put("English", Locale.ENGLISH);
+
         localeCode = Locale.GERMAN.getLanguage();
+        FacesContext.getCurrentInstance().getViewRoot().setLocale(Locale.GERMAN);
     }
 
     public void onLocaleCodeChange(ValueChangeEvent valueChangeEvent) {

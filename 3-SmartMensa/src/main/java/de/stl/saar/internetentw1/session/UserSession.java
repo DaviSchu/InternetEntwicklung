@@ -7,6 +7,7 @@ import de.stl.saar.internetentw1.model.User;
  */
 public class UserSession {
 
+    private int locale;
     private User user;
 
     public User getUser() {

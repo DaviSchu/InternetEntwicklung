@@ -3,10 +3,13 @@ package de.stl.saar.internetentw1.view;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.User;
 import de.stl.saar.internetentw1.session.UserSession;
+import de.stl.saar.internetentw1.utils.I18nUtil;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import java.util.List;
 
 @ManagedBean
@@ -69,8 +72,14 @@ public class LoginView {
                 }
             }
         }
-        return "wrongLogin";
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        facesContext.addMessage(null,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error",
+                        I18nUtil.getInvalidUserData()));
+        return null;
     }
+
+
 
     public void logOut(){
         userSession.setUser(null);
