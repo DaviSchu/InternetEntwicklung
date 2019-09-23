@@ -7,9 +7,9 @@
 
 <h:body>
     <h:form>
-        <h:selectOneMenu id="#{i18nBean.localeCode}" onchange="submit()"
+        <h:selectOneMenu value="#{i18nBean.localeCode}" onchange="submit()"
                          valueChangeListener="#{i18nBean.onLocaleCodeChange}">>
-            <f:selectItems value="#{i18nBean.languages}"/>
+            <f:selectItems value="#{i18nBean.languages}" />
         </h:selectOneMenu>
     </h:form>
 </h:body>

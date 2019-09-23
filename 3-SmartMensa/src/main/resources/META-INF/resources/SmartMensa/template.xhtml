@@ -8,8 +8,8 @@
 <head>
     <title>Title</title>
 </head>
-
 <h:body>
+    <f:view locale="#{i18nBean.localeCode}">
     <div id="smartmensa">
         <div style="border-width: 2px; border-style: solid; height: 10%">
             <ui:insert name="header">
@@ -27,5 +27,6 @@
             </ui:insert>
         </div>
     </div>
+</f:view>
 </h:body>
 </html>
