@@ -54,7 +54,7 @@ public class RegisterView {
     public void register() {
 
         Role role = new Role(2,"user");
-        User newUser = new User(1,userName,password,role);
+        User newUser = new User(userName,password,role);
 
         userDao.addUser(newUser);
     }

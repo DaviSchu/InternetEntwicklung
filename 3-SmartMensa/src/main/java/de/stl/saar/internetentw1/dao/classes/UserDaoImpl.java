@@ -25,16 +25,17 @@ public class UserDaoImpl implements UserDao {
 
 	private Map<Integer, User> userTable;
 	private RoleDao roleDao;
+	private int counter;
 
 	@PostConstruct
 	public void initialize() {
 		userTable = new HashMap<>();
-
+		this.counter=0;
 		final Role adminRole = roleDao.findRoleByName("admin");
 		final Role userRole = roleDao.findRoleByName("user");
-		final User user1 = new User(1, "colbertz", "1234", adminRole);
-		final User user2 = new User(2, "wpy", "qwertz", userRole);
-		final User user3 = new User(3, "api", "5678", userRole);
+		final User user1 = new User("colbertz", "1234", adminRole);
+		final User user2 = new User("wpy", "qwertz", userRole);
+		final User user3 = new User( "api", "5678", userRole);
 		addUser(user1);
 		addUser(user2);
 		addUser(user3);
@@ -42,18 +43,10 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(final User user) {
-		int primaryKeyValue = user.getUserId();
-		
-		if (primaryKeyValue > 0) {
-			if (!primaryKeyValueFree(primaryKeyValue)) {
-				primaryKeyValue = createPrimaryKeyValue();
-			}
-		} else {
-			primaryKeyValue = createPrimaryKeyValue();
-			user.setUserId(primaryKeyValue);
-		}
-		
-		userTable.put(primaryKeyValue, user);
+		counter++;
+		user.setUserId(counter);
+
+		userTable.put(counter, user);
 	}
 	
 	/**
@@ -90,9 +83,12 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public void removeUser(final int userId) {
+
 		userTable.remove(userId);
+		assignNewId(userId);
+		counter--;
 	}
-	
+
 	@Override
 	public List<User> findAllUsers() {
 		final Collection<User> userCollection = userTable.values();
@@ -100,8 +96,19 @@ public class UserDaoImpl implements UserDao {
 		return users;
 	}
 
+	public void assignNewId (int id)
+	{
+		for(int i= id+1; i<=counter; i++ ) {
+			userTable.get(i).setUserId(i-1);
+		}
+	}
+
 	@Override
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
 	}
+
+	public int getCounter() {
+		return counter;
+	};
 }

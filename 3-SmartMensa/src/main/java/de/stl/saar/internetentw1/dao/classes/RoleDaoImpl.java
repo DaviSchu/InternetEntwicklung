@@ -20,11 +20,11 @@ import de.stl.saar.internetentw1.utils.StringUtils;
  */
 public class RoleDaoImpl implements RoleDao {
 	private Map<Integer, Role> roleTable;
-	
+
 	public RoleDaoImpl() {
 		roleTable = new HashMap<>();
-		final Role role1 = new Role(1, "admin");
-		final Role role2 = new Role(2, "user");
+		final Role role1 = new Role(1,"admin");
+		final Role role2 = new Role(2,"user");
 		addRole(role1);
 		addRole(role2);
 	}
@@ -32,7 +32,6 @@ public class RoleDaoImpl implements RoleDao {
 	@Override
 	public void addRole(final Role role) {
 		int primaryKeyValue = role.getRoleId();
-		
 		if (primaryKeyValue > 0) {
 			if (!primaryKeyValueFree(primaryKeyValue)) {
 				primaryKeyValue = createPrimaryKeyValue();
@@ -78,7 +77,8 @@ public class RoleDaoImpl implements RoleDao {
 	}
 	
 	@Override
-	public void removeRole(final int roleId) {
+	public void removeRole(final int roleId)
+	{
 		roleTable.remove(roleId);
 	}
 	
@@ -101,4 +101,5 @@ public class RoleDaoImpl implements RoleDao {
 		
 		return null;
 	}
+
 }
