@@ -9,7 +9,7 @@ public class Role {
 	
 	public Role(int roleId, String roleName) {
 		super();
-		this.roleId = roleId;
+		this.roleId=roleId;
 		this.roleName = roleName;
 	}
 

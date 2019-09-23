@@ -39,8 +39,7 @@
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.delete}"
-                                     action="#{dishDao.removeDish(dishes.dishId)}"
-                                     actionListener="#{dishView.refresh()}"/>
+                                     action="#{dishDao.removeDish(dishes.dishId)}"/>
                 </h:column>
             </h:dataTable>
                 <h:commandButton value="#{labels.buttonNew}" action="changeDishes" /><br/>

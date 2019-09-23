@@ -49,11 +49,16 @@
 
                 <h:commandButton value="#{labels.buttonSave}"
                                  action="#{dishView.saveDish()}"/>
-                <h:commandButton value="#{labels.buttonCancel}"
-                                 action="dishes" />
+
 
             </h:panelGrid>
             </h:form>
+            <h:panelGrid columns="1">
+                <h:form>
+                    <h:commandButton value="#{labels.buttonCancel}"
+                                     action="dishes" />
+                </h:form>
+            </h:panelGrid>
         </ui:define>
 
 
