@@ -48,13 +48,13 @@
                         </h:column>
                         <h:column>
                             <h:commandButton value="#{labels.buttonAddToShoppingCart}"
-                                             actionListener="#{menuView.addDish(dishes)}" />
+                                             actionListener="#{MenuView.addDish(dishes)}" />
                         </h:column>
                      </h:dataTable>
                     </h:panelGroup>
 
                     <h:panelGroup>
-                        <h:dataTable value="#{menuView.orderList}"
+                        <h:dataTable value="#{MenuView.orderList}"
                                      var="dish"
                                      id="myOrder"
                                      cellspacing="10">
@@ -66,13 +66,13 @@
                             </h:column>
                             <h:column>
                                 <h:commandLink value="#{labels.buttonRemove}"
-                                                 actionListener="#{menuView.removeDish(dish)}" />
+                                                 actionListener="#{MenuView.removeDish(dish)}" />
                             </h:column>
                         </h:dataTable>
                     </h:panelGroup>
                     <h:commandButton value="#{labels.buttonBack}" action="overview" />
                     <h:panelGroup>
-                        <h:outputText value="#{labels.priceTotal}: #{menuView.total} €" />
+                        <h:outputText value="#{labels.priceTotal}: #{MenuView.total} €" />
                         <h:commandButton value="#{labels.buttonOrder}" />
                     </h:panelGroup>
                 </h:panelGrid>

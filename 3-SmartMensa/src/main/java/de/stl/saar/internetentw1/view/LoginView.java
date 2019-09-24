@@ -68,7 +68,11 @@ public class LoginView {
                     userSession.setUser(u);
                     userName="";
                     password="";
-                    return "overview";
+                    if (u.isChangePassword()) {
+                        return "changePassword";
+                    } else {
+                        return "overview";
+                    }
                 }
             }
         }

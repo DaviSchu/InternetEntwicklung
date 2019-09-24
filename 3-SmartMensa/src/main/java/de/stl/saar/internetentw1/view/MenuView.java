@@ -9,7 +9,7 @@ import java.util.List;
 
 @ManagedBean
 @ViewScoped
-public class menuView {
+public class MenuView {
 
     private List<Dish> orderList = new LinkedList<>();
     private double total;

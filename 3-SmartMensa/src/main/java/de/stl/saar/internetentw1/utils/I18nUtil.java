@@ -18,4 +18,7 @@ public class I18nUtil {
         return messages.getString("wrongLogInData");
     }
 
+    public static String getInvalidPassword() {
+        return messages.getString("wrongPassword");
+    }
 }

@@ -7,11 +7,11 @@ import de.stl.saar.internetentw1.session.UserSession;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class UserAdministrationView {
 
     @ManagedProperty("#{userDao}")
@@ -130,4 +130,5 @@ public class UserAdministrationView {
     public void setUser(User user) {
         this.user = user;
     }
+
 }

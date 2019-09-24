@@ -36,6 +36,7 @@ public class UserDaoImpl implements UserDao {
 		final User user2 = new User("asdf", "fdsa", adminRole);
 		final User user3 = new User("wpy", "qwertz", userRole);
 		final User user4 = new User( "api", "5678", userRole);
+		user3.setChangePassword(true);
 		addUser(user1);
 		addUser(user2);
 		addUser(user3);
