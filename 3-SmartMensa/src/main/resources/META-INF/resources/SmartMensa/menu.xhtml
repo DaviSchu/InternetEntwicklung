@@ -10,9 +10,66 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+
             <h:form>
-               <h:commandButton value="#{labels.buttonAddToShoppingCart}" action="order" /> <br/>
-               <h:commandButton value="#{labels.buttonBack}" action="overview" />
+                <h:panelGrid columns="2" cellpadding="0" >
+
+                    <h:panelGroup>
+                        <h1>#{labels.menu}</h1>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <h1>#{labels.shoppingCart}</h1>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <h:dataTable value="#{dishDao.findAllDishes()}"
+                                 var="dishes"
+                                 id="mydishes">
+                          <h:column>
+                            <f:facet name="header"><h:outputText value="#{labels.number}" /></f:facet>
+                            <h:outputText value="#{dishes.dishId}"/>
+                          </h:column>
+                        <h:column>
+                            <h:graphicImage library="images" name="#{dishes.imageName}.jpg" height="30"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="#{labels.name}" /></f:facet>
+                            <h:outputText value="#{dishes.dishName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="#{labels.price}" /></f:facet>
+                            <h:outputText value="#{dishes.price}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>
+                            <h:outputText value="#{dishes.category.toString()}"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="#{labels.buttonAddToShoppingCart}"
+                                             actionListener="#{menuView.addDish(dishes)}" />
+                        </h:column>
+                     </h:dataTable>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <h:dataTable value="#{menuView.orderList}"
+                                     var="dish"
+                                     id="myOrder">
+                            <h:column>
+                                <h:outputText value="#{dish.dishName}" />
+                            </h:column>
+                            <h:column>
+                                <h:outputText value="#{dish.price}" />
+                            </h:column>
+                            <h:column>
+                                <h:commandButton value="#{label.buttonRemove}"
+                                                 actionListener="#{menuView.removeDish(dish)}" />
+                            </h:column>
+                        </h:dataTable>
+                    </h:panelGroup>
+                </h:panelGrid>
+                <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:form>
         </ui:define>
 
