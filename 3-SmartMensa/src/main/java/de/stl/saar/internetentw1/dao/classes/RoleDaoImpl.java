@@ -23,8 +23,10 @@ public class RoleDaoImpl implements RoleDao {
 
 	public RoleDaoImpl() {
 		roleTable = new HashMap<>();
+		final Role role0 = new Role(0,"superadmin");
 		final Role role1 = new Role(1,"admin");
 		final Role role2 = new Role(2,"user");
+		addRole(role0);
 		addRole(role1);
 		addRole(role2);
 	}

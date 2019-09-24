@@ -34,7 +34,8 @@
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.buttonChangeUser}"
-                                         action="createUser">
+                                     actionListener="#{userAdministrationView.loadUser(users)}"
+                                     action="createUser">
                     </h:commandButton>
                 </h:column>
                 <h:column>
