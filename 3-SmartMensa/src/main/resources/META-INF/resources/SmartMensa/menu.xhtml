@@ -12,7 +12,7 @@
         <ui:define name = "content">
 
             <h:form>
-                <h:panelGrid columns="2" cellpadding="0" >
+                <h:panelGrid columns="2" cellpadding="10" >
 
                     <h:panelGroup>
                         <h1>#{labels.menu}</h1>
@@ -25,13 +25,14 @@
                     <h:panelGroup>
                         <h:dataTable value="#{dishDao.findAllDishes()}"
                                  var="dishes"
-                                 id="mydishes">
+                                 id="mydishes"
+                                 cellspacing="10">
                           <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.number}" /></f:facet>
                             <h:outputText value="#{dishes.dishId}"/>
                           </h:column>
                         <h:column>
-                            <h:graphicImage library="images" name="#{dishes.imageName}.jpg" height="30"/>
+                            <h:graphicImage library="images" name="#{dishes.imageName}.jpg" height="50" width="90"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.name}" /></f:facet>
@@ -39,7 +40,7 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.price}" /></f:facet>
-                            <h:outputText value="#{dishes.price}"/>
+                            <h:outputText value="#{dishes.price}€"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>
@@ -55,12 +56,13 @@
                     <h:panelGroup>
                         <h:dataTable value="#{menuView.orderList}"
                                      var="dish"
-                                     id="myOrder">
+                                     id="myOrder"
+                                     cellspacing="10">
                             <h:column>
                                 <h:outputText value="#{dish.dishName}" />
                             </h:column>
                             <h:column>
-                                <h:outputText value="#{dish.price}" />
+                                <h:outputText value="#{dish.price}€" />
                             </h:column>
                             <h:column>
                                 <h:commandButton value="#{labels.buttonRemove}"
@@ -68,8 +70,12 @@
                             </h:column>
                         </h:dataTable>
                     </h:panelGroup>
+                    <h:commandButton value="#{labels.buttonBack}" action="overview" />
+                    <h:panelGroup>
+                        <h:outputText value="#{labels.priceTotal}: #{menuView.total}€" />
+                        <h:commandButton value="#{labels.buttonOrder}" />
+                    </h:panelGroup>
                 </h:panelGrid>
-                <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:form>
         </ui:define>
 
