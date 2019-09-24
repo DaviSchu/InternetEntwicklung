@@ -27,7 +27,7 @@
                                          id="txtUserRoles"
                                          required="false"
                                          requiredMessage="#{msg.roleRequired}">
-                            <f:selectItems value="#{roleDao.findAllRoles()}"
+                            <f:selectItems value="#{roleDao.findCreatableRoles()}"
                                            var="name"
                                            itemLabel="#{name.roleName}"
                                            itemValue="#{name}"/>

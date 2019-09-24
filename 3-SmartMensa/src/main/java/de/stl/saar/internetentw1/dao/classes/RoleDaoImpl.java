@@ -77,6 +77,13 @@ public class RoleDaoImpl implements RoleDao {
 			return false;
 		}
 	}
+
+	public List<Role> findCreatableRoles() {
+		final Collection<Role> roleCollection = roleTable.values();
+		final List<Role> roles = new ArrayList<>(roleCollection);
+		roles.remove(0);
+		return roles;
+	}
 	
 	@Override
 	public void removeRole(final int roleId)
