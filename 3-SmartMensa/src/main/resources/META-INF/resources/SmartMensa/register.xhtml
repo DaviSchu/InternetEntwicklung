@@ -8,6 +8,11 @@
 <h:body>
     <ui:composition template="template.xhtml">
         <ui:define name = "content">
+            <h:panelGrid>
+            <head>
+                <title>#{labels.registration}</title>
+            </head>
+            <h1>#{labels.registration}</h1>
             <h:form>
                 <h:panelGrid columns="4">
                     <h:outputText value="#{labels.username}" />
@@ -37,6 +42,7 @@
                 <h:form>
                     <h:commandButton value="#{labels.back}" action="login" />
                 </h:form>
+            </h:panelGrid>
             </h:panelGrid>
         </ui:define>
 

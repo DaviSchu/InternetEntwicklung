@@ -10,8 +10,12 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+
             <h:form>
             <h:panelGrid columns="1">
+            <head>
+                <title>#{labels.manageDishes}</title>
+            </head>
             <h1>#{labels.manageDishes}</h1>
             <h:dataTable value="#{dishDao.findAllDishes()}"
                          var="dishes"

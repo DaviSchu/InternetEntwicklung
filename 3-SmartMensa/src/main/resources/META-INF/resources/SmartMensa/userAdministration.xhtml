@@ -10,6 +10,10 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <h:panelGrid>
+            <head>
+                <title>#{labels.manageUser}</title>
+            </head>
             <h:form>
             <h:panelGrid columns="1">
             <h1>#{labels.manageUser}</h1>
@@ -50,6 +54,7 @@
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:panelGrid>
             </h:form>
+            </h:panelGrid>
         </ui:define>
 
     </ui:composition>

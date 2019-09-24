@@ -10,6 +10,11 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <h:panelGrid>
+            <head>
+                <title>#{labels.overview}</title>
+            </head>
+            <h1>#{labels.overview}</h1>
             <h:form>
                 <h:panelGrid columns="1">
                     <h:outputText value="#{labels.welcome} #{userSession.user.username}!" />
@@ -22,7 +27,7 @@
                     <h:commandLink value="#{labels.buttonLogOut}" action="login" actionListener="#{loginView.logOut}" />
                 </h:panelGrid>
             </h:form>
-            
+            </h:panelGrid>
         </ui:define>
 
     </ui:composition>
