@@ -97,6 +97,11 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public void replaceUser(User user) {
+		userTable.put(user.getUserId(), user);
+	}
+
+	@Override
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
 	}
