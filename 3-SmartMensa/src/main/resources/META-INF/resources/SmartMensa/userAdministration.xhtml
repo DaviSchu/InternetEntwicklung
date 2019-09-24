@@ -39,10 +39,9 @@
                     </h:commandButton>
                 </h:column>
                 <h:column>
-                    <c:if test="#{users.role.roleId ne 0}">
                         <h:commandButton value="#{labels.buttonDelete}"
+                                         rendered="#{users.role.roleId ne 0}"
                                          action="#{userDao.removeUser(users.userId)}"/>
-                    </c:if>
                 </h:column>
             </h:dataTable>
                 <h:commandButton value="#{labels.buttonAddUser}"
