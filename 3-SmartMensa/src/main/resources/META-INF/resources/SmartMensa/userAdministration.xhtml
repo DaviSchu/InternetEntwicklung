@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 
 <h:body>
@@ -25,20 +25,28 @@
                     <h:outputText value="#{users.username}"/>
                 </h:column>
                 <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.changePassword}" /></f:facet>
+                    <h:selectBooleanCheckbox value="#{users.changePassword}"/>
+                </h:column>
+                <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.role}" /></f:facet>
                     <h:outputText value="#{users.role.roleName}"/>
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.buttonChangeUser}"
-                                         action="createUser">
+                                     actionListener="#{userAdministrationView.loadUser(users)}"
+                                     action="createUser">
                     </h:commandButton>
                 </h:column>
                 <h:column>
-                    <h:commandButton value="#{labels.delete}"
-                                     action="userAdministration"/>
+                    <c:if test="#{userSession.user.role.roleId ne 0}">
+                        <h:commandButton value="#{labels.delete}"
+                                         action="#{userAdministrationView.removeUser(users.userId)}"/>
+                    </c:if>
                 </h:column>
             </h:dataTable>
-                <h:commandButton value="#{labels.buttonAddUser}" action="createUser" /><br/>
+                <h:commandButton value="#{labels.buttonAddUser}"
+                                 actionListener="#{userAdministrationView.purge()}" /><br/>
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:panelGrid>
             </h:form>

@@ -14,4 +14,10 @@ public interface UserDao {
 
 	void setRoleDao(RoleDao roleDao);
 
+	/**
+	 * Setzt einen übergebenen User an die Stelle seiner Id
+	 * @param user der einzufügende User
+	 */
+	void replaceUser(User user);
+
 }
