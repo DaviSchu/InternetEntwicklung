@@ -25,6 +25,10 @@
                     <h:outputText value="#{users.username}"/>
                 </h:column>
                 <h:column>
+                    <f:facet name="header"><h:outputText value="#{labels.changePassword}" /></f:facet>
+                    <h:selectBooleanCheckbox value="#{users.changePassword}"/>
+                </h:column>
+                <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.role}" /></f:facet>
                     <h:outputText value="#{users.role.roleName}"/>
                 </h:column>
