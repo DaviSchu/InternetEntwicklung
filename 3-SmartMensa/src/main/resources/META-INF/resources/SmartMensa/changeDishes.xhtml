@@ -10,9 +10,11 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <head>
+                <title>#{labels.createAndChangeDish}</title>
+            </head>
             <h:form>
             <h:panelGrid columns="1">
-
                 <h1>#{labels.createAndChangeDish}</h1>
                 <h:graphicImage library="images" name="#{dishView.imageName}.jpg"/>
                 <h:panelGrid columns="3">

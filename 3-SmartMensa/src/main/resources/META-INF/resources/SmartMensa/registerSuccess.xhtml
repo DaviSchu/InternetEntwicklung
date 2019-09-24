@@ -10,11 +10,16 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <h:panelGrid>
+            <head>
+                <title>#{labels.registration}</title>
+            </head>
             <h:panelGrid columns="1">
-                <h2>#{msg.registrationSuccess}</h2>
+                <h1>#{msg.registrationSuccess}</h1>
                 <h:form>
                     <h:commandButton value="#{labels.buttonToLogin}" action="login" />
                 </h:form>
+            </h:panelGrid>
             </h:panelGrid>
         </ui:define>
 

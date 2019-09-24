@@ -10,6 +10,9 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
+            <head>
+                <title>#{labels.changeProfile}</title>
+            </head>
             <h:form>
                 <h:commandButton value="#{labels.buttonSave}" action="overview" /><br/>
                 <h:commandButton value="#{labels.buttonCancel}" action="overview" />

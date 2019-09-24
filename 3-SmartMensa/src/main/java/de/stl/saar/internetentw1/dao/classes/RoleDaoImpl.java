@@ -34,7 +34,7 @@ public class RoleDaoImpl implements RoleDao {
 	@Override
 	public void addRole(final Role role) {
 		int primaryKeyValue = role.getRoleId();
-		if (primaryKeyValue > 0) {
+		if (primaryKeyValue >= 0) {
 			if (!primaryKeyValueFree(primaryKeyValue)) {
 				primaryKeyValue = createPrimaryKeyValue();
 			}
@@ -42,7 +42,7 @@ public class RoleDaoImpl implements RoleDao {
 			primaryKeyValue = createPrimaryKeyValue();
 			role.setRoleId(primaryKeyValue);
 		}
-		
+
 		roleTable.put(primaryKeyValue, role);
 	}
 	
@@ -76,6 +76,13 @@ public class RoleDaoImpl implements RoleDao {
 		} else {
 			return false;
 		}
+	}
+
+	public List<Role> findCreatableRoles() {
+		final Collection<Role> roleCollection = roleTable.values();
+		final List<Role> roles = new ArrayList<>(roleCollection);
+		roles.remove(0);
+		return roles;
 	}
 	
 	@Override

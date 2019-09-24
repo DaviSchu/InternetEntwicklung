@@ -11,6 +11,10 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name="content">
+            <h:panelGrid>
+            <head>
+                <title>#{labels.logIn}</title>
+            </head>
             <h1>#{labels.logIn}</h1>
             <h:messages globalOnly="true"
                         showDetail="true"
@@ -36,6 +40,7 @@
                 <h:form>
                     <h:commandButton value="#{labels.buttonRegistration}" action="register"/>
 			    </h:form>
+            </h:panelGrid>
             </h:panelGrid>
         </ui:define>
 
