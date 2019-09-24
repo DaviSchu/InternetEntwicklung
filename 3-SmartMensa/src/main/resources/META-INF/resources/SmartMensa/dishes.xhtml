@@ -43,8 +43,9 @@
                                      action="#{dishDao.removeDish(dishes.dishId)}"/>
                 </h:column>
             </h:dataTable>
-                <h:commandButton value="#{labels.buttonNew}" action="changeDishes"
-                                actionListener="#{dishView.purge()}"/><br/>
+                <h:commandButton value="#{labels.buttonNew}"
+                                 action="changeDishes"
+                                 actionListener="#{dishView.purge()}"/><br/>
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:panelGrid>
             </h:form>

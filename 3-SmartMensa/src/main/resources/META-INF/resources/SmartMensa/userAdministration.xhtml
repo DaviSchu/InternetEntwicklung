@@ -45,6 +45,7 @@
                 </h:column>
             </h:dataTable>
                 <h:commandButton value="#{labels.buttonAddUser}"
+                                 action="createUser"
                                  actionListener="#{userAdministrationView.purge()}" /><br/>
                 <h:commandButton value="#{labels.buttonBack}" action="overview" />
             </h:panelGrid>
