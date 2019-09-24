@@ -39,7 +39,7 @@
                     </h:commandButton>
                 </h:column>
                 <h:column>
-                    <c:if test="#{userSession.user.role.roleId ne 0}">
+                    <c:if test="#{users.role.roleId ne 0}">
                         <h:commandButton value="#{labels.delete}"
                                          action="#{userAdministrationView.removeUser(users.userId)}"/>
                     </c:if>
