@@ -5,12 +5,14 @@ public class User {
 	private String username;
 	private String password;
 	private Role role;
+	private boolean changePassword;
 
 	public User(String username, String password, Role role) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.role = role;
+		this.changePassword = false;
 	}
 
 	public int getUserId() {
@@ -44,5 +46,13 @@ public class User {
 	
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public boolean isChangePassword() {
+		return changePassword;
+	}
+
+	public void setChangePassword(boolean changePassword) {
+		this.changePassword = changePassword;
 	}
 }
