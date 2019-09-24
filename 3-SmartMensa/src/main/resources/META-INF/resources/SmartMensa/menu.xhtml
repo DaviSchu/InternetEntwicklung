@@ -40,7 +40,7 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.price}" /></f:facet>
-                            <h:outputText value="#{dishes.price}€"/>
+                            <h:outputText value="#{dishes.price} €"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>
@@ -62,7 +62,7 @@
                                 <h:outputText value="#{dish.dishName}" />
                             </h:column>
                             <h:column>
-                                <h:outputText value="#{dish.price}€" />
+                                <h:outputText value="#{dish.price} €" />
                             </h:column>
                             <h:column>
                                 <h:commandLink value="#{labels.buttonRemove}"
@@ -72,7 +72,7 @@
                     </h:panelGroup>
                     <h:commandButton value="#{labels.buttonBack}" action="overview" />
                     <h:panelGroup>
-                        <h:outputText value="#{labels.priceTotal}: #{menuView.total}€" />
+                        <h:outputText value="#{labels.priceTotal}: #{menuView.total} €" />
                         <h:commandButton value="#{labels.buttonOrder}" />
                     </h:panelGroup>
                 </h:panelGrid>
