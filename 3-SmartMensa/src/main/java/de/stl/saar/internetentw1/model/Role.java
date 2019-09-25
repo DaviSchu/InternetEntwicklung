@@ -12,7 +12,7 @@ public class Role {
 		this.roleId=roleId;
 		this.roleName = roleName;
 	}
-	
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
