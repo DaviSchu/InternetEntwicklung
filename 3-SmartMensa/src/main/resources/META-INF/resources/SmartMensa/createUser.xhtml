@@ -25,16 +25,19 @@
                         <h:message for="txtUsername" errorStyle="color: red" />
 
 
-                        <h:outputText value="#{labels.role}" />
+                        <h:outputText value="#{labels.role}"
+                                      rendered="#{userAdministrationView.user.role.roleId ne 0}"/>
                         <h:selectOneMenu value="#{userAdministrationView.role}"
                                          converter="#{roleConverter}"
+                                         rendered="#{userAdministrationView.user.role.roleId ne 0}"
                                          id="txtUserRoles">
                             <f:selectItems value="#{roleDao.findCreatableRoles()}"
                                            var="role"
                                            itemLabel="#{role.roleName}"
                                            itemValue="#{role}"/>
                         </h:selectOneMenu>
-                        <h:message for="txtUserRoles" errorStyle="color: red" />
+                        <h:message for="txtUserRoles" errorStyle="color: red"
+                                   rendered="#{userAdministrationView.user.role.roleId ne 0}" />
 
                         <h:outputText value="#{labels.userPassword}" />
                         <h:inputText value="#{userAdministrationView.password}" id="txtUserPassword"

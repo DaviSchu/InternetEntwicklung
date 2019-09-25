@@ -12,6 +12,8 @@ public interface RoleDao {
 
 	List<Role> findAllRoles();
 
+	List<Role> findCreatableRoles();
+
 	Role findRoleByName(String roleName);
 
 }

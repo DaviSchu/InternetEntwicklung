@@ -1,5 +1,6 @@
 package de.stl.saar.internetentw1.view;
 
+import de.stl.saar.internetentw1.dao.interfaces.RoleDao;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
@@ -20,8 +21,6 @@ public class UserAdministrationView {
 
     @ManagedProperty("#{userSession}")
     private UserSession userSession;
-
-
 
     private int userId;
     private String userName;
