@@ -13,9 +13,9 @@
             <h:form>
                 <h:panelGrid columns="1">
                     <head>
-                        <title>#{labels.createAndChangeUser}</title>
+                        <title>#{labels.changeProfile}</title>
                     </head>
-                    <h1>#{labels.createAndChangeUser}</h1>
+                    <h1>#{labels.changeProfile}</h1>
                     <h:panelGrid columns="3">
                         <h:outputText value="#{labels.username}" />
                         <h:inputText value="#{userAdministrationView.username}" id="txtUsername"
@@ -33,13 +33,13 @@
                     </h:panelGrid>
                     <h:commandButton value="#{labels.buttonSave}"
                                      actionListener="#{userAdministrationView.changeProfile()}"
-                                     action="overview" />
+                                     action="changeProfileSuccess" />
                 </h:panelGrid>
             </h:form>
             <h:panelGrid columns="1">
                 <h:form>
                     <h:commandButton value="#{labels.buttonCancel}"
-                                     action="changeProfileSuccess" />
+                                     action="overview" />
                 </h:form>
             </h:panelGrid>
         </ui:define>
