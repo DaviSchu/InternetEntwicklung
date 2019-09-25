@@ -10,7 +10,9 @@ import java.util.Random;
  */
 public class RandomUtils {
 	private static final Random random;
-	
+	private static final String SOURCES =
+			"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+
 	static {
 		random = new Random();
 	}
@@ -36,4 +38,13 @@ public class RandomUtils {
 	public static int nextInt() {
 		return random.nextInt();
 	}
+
+	public static String createStringWithRandomChars(int length) {
+		char[] randomString = new char[length];
+		for (int i= 0; i< length; i++) {
+			randomString[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
+		}
+		return new String(randomString);
+	}
+
 }

@@ -45,6 +45,11 @@
                                      requiredMessage="#{msg.passwordRequired}">
                         </h:inputText>
                         <h:message for="txtUserPassword" errorStyle="color: red" />
+
+                        <h:selectBooleanCheckbox value="#{userAdministrationView.changePassword}"
+                                                 disabled="true" />
+                        <h:commandButton value="#{labels.buttonGeneratePassword}"
+                                         actionListener="#{userAdministrationView.createRandomPassword()}"/>
                     </h:panelGrid>
                     <h:commandButton value="#{labels.buttonSave}"
                                      actionListener="#{userAdministrationView.saveUser()}"

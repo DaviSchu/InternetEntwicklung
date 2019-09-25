@@ -5,11 +5,13 @@ import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
 import de.stl.saar.internetentw1.session.UserSession;
+import de.stl.saar.internetentw1.utils.RandomUtils;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import java.util.Random;
 
 
 @ManagedBean
@@ -47,6 +49,11 @@ public class UserAdministrationView {
             userSession.setUser(currentUser);
             userDao.replaceUser(currentUser);
         }
+    }
+
+    public void createRandomPassword() {
+        setPassword(RandomUtils.createStringWithRandomChars(8));
+        setChangePassword(true);
     }
 
     public void print() {
