@@ -36,9 +36,7 @@
 
                     <h:outputText value="#{labels.category}" />
                     <h:selectOneMenu value="#{dishView.category}"
-                                        id="txtDishCategory"
-                                        required="false"
-                                        requiredMessage="#{msg.dishCategoryRequired}">
+                                        id="txtDishCategory">
                         <f:selectItems value="#{dishView.categories}"
                                        var="name"
                                        itemLabel="#{name.categoryName}"

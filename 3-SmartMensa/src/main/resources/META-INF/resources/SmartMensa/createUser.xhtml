@@ -27,13 +27,12 @@
 
                         <h:outputText value="#{labels.role}" />
                         <h:selectOneMenu value="#{userAdministrationView.role}"
-                                         id="txtUserRoles"
-                                         required="false"
-                                         requiredMessage="#{msg.roleRequired}">
+                                         converter="#{roleConverter}"
+                                         id="txtUserRoles">
                             <f:selectItems value="#{roleDao.findCreatableRoles()}"
-                                           var="name"
-                                           itemLabel="#{name.roleName}"
-                                           itemValue="#{name}"/>
+                                           var="role"
+                                           itemLabel="#{role.roleName}"
+                                           itemValue="#{role}"/>
                         </h:selectOneMenu>
                         <h:message for="txtUserRoles" errorStyle="color: red" />
 
@@ -45,7 +44,8 @@
                         <h:message for="txtUserPassword" errorStyle="color: red" />
                     </h:panelGrid>
                     <h:commandButton value="#{labels.buttonSave}"
-                                     action="#{userAdministrationView.saveDish()}"/>
+                                     actionListener="#{userAdministrationView.saveUser()}"
+                                     action="userAdministration"/>
                 </h:panelGrid>
             </h:form>
             <h:panelGrid columns="1">

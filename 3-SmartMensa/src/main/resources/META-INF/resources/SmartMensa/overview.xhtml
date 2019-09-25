@@ -20,7 +20,9 @@
                     <h:outputText value="#{labels.welcome} #{userSession.user.username}!" />
                     <c:if test="#{userSession.user.role.roleId ne 2}">
                         <h:commandLink value="#{labels.buttonDishes}" action="dishes" />
-                        <h:commandLink value="#{labels.buttonUserAdministration}" action="userAdministration" />
+                        <h:commandLink value="#{labels.buttonUserAdministration}"
+                                       actionListener="#{userAdministrationView.loadUser(userSession.user)}"
+                                       action="userAdministration" />
                     </c:if>
                     <h:commandLink value="#{labels.buttonChangeProfile}" action="changeProfile" />
                     <h:commandLink value="#{labels.buttonMenu}" action="menu" />

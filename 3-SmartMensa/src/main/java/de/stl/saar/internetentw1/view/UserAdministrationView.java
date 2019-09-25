@@ -7,11 +7,12 @@ import de.stl.saar.internetentw1.session.UserSession;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class UserAdministrationView {
 
     @ManagedProperty("#{userDao}")
@@ -29,7 +30,7 @@ public class UserAdministrationView {
     private boolean changePassword;
     private User user;
 
-    public String saveUser() {
+    public void saveUser() {
         User newUser = new User(userName, password, role);
         if (user != null) {
             newUser.setUserId(userId);
@@ -37,8 +38,16 @@ public class UserAdministrationView {
         } else {
             userDao.addUser(newUser);
         }
+    }
 
-        return "userAdministration";
+    public void changeProfile() {
+        User currentUser = userSession.getUser();
+        if (currentUser != null) {
+            currentUser.setUsername(userName);
+            currentUser.setPassword(password);
+            userSession.setUser(currentUser);
+            userDao.replaceUser(currentUser);
+        }
     }
 
     public void print() {

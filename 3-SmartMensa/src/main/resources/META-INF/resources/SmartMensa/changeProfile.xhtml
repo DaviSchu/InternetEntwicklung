@@ -10,13 +10,38 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
-            <head>
-                <title>#{labels.changeProfile}</title>
-            </head>
             <h:form>
-                <h:commandButton value="#{labels.buttonSave}" action="overview" /><br/>
-                <h:commandButton value="#{labels.buttonCancel}" action="overview" />
+                <h:panelGrid columns="1">
+                    <head>
+                        <title>#{labels.createAndChangeUser}</title>
+                    </head>
+                    <h1>#{labels.createAndChangeUser}</h1>
+                    <h:panelGrid columns="3">
+                        <h:outputText value="#{labels.username}" />
+                        <h:inputText value="#{userAdministrationView.username}" id="txtUsername"
+                                     required="true"
+                                     requiredMessage="#{msg.usernameRequired}" >
+                        </h:inputText>
+                        <h:message for="txtUsername" errorStyle="color: red" />
+
+                        <h:outputText value="#{labels.userPassword}" />
+                        <h:inputText value="#{userAdministrationView.password}" id="txtUserPassword"
+                                     required="true"
+                                     requiredMessage="#{msg.passwordRequired}">
+                        </h:inputText>
+                        <h:message for="txtUserPassword" errorStyle="color: red" />
+                    </h:panelGrid>
+                    <h:commandButton value="#{labels.buttonSave}"
+                                     actionListener="#{userAdministrationView.changeProfile()}"
+                                     action="overview" />
+                </h:panelGrid>
             </h:form>
+            <h:panelGrid columns="1">
+                <h:form>
+                    <h:commandButton value="#{labels.buttonCancel}"
+                                     action="overview" />
+                </h:form>
+            </h:panelGrid>
         </ui:define>
 
 
