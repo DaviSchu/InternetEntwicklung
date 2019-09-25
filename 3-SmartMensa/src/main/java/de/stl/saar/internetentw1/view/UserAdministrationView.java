@@ -35,6 +35,7 @@ public class UserAdministrationView {
         User newUser = new User(userName, password, role);
         if (user != null) {
             newUser.setUserId(userId);
+            newUser.setChangePassword(changePassword);
             userDao.replaceUser(newUser);
         } else {
             userDao.addUser(newUser);
