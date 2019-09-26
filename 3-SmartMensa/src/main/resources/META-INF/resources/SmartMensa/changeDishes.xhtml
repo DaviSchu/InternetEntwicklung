@@ -19,14 +19,14 @@
                 <h1>#{labels.createAndChangeDish}</h1>
                 <h:graphicImage library="images" name="#{dishView.imageName}.jpg"/>
                 <h:panelGrid columns="3">
-                    <h:outputText value="#{labels.name}" />
+                    <h:outputText value="#{labels.name}: " />
                     <h:inputText value="#{dishView.dishName}" id="txtDishName"
                                  required="true"
                                  requiredMessage="#{msg.dishNameRequired}" >
                     </h:inputText>
                     <h:message for="txtDishName" errorStyle="color: red" />
 
-                    <h:outputText value="#{labels.costs}" />
+                    <h:outputText value="#{labels.costs}: " />
                     <h:inputText value="#{dishView.price}" id="txtDishPrice"
                                  required="true"
                                  requiredMessage="#{msg.dishPriceRequired}"
@@ -35,7 +35,7 @@
                     </h:inputText>
                     <h:message for="txtDishPrice" errorStyle="color: red" />
 
-                    <h:outputText value="#{labels.category}" />
+                    <h:outputText value="#{labels.category}: " />
                     <h:selectOneMenu value="#{dishView.category}"
                                         id="txtDishCategory">
                         <f:selectItems value="#{dishView.categories}"

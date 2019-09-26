@@ -21,12 +21,12 @@
                         showSummary="false"/>
             <h:form>
                 <p:panelGrid columns="3">
-                    <h:outputText value="#{labels.username}:"/>
+                    <h:outputText value="#{labels.username}: "/>
                     <h:inputText value="#{loginView.userName}" id="txtUsername"
                                  required="true" requiredMessage="#{msg.usernameRequired}" />
                     <h:message for="txtUsername" errorStyle="color: red"/>
 
-                    <h:outputText value="#{labels.userPassword}:"/>
+                    <h:outputText value="#{labels.userPassword}: "/>
                     <h:inputSecret value="#{loginView.password}" id="txtPassword"
                                    required="true" requiredMessage="#{msg.passwordRequired}"/>
                     <h:message for="txtPassword" errorStyle="color: red"/>

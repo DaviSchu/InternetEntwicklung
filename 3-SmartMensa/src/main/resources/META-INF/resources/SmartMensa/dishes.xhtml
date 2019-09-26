@@ -19,10 +19,14 @@
             <h1>#{labels.manageDishes}</h1>
             <h:dataTable value="#{dishDao.findAllDishes()}"
                          var="dishes"
-                         id="mydishes">
+                         id="mydishes"
+                         cellspacing="10">
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.number}" /></f:facet>
                     <h:outputText value="#{dishes.dishId}"/>
+                </h:column>
+                <h:column>
+                    <h:graphicImage library="images" name="#{dishes.imageName}.jpg" height="50" width="90"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.name}" /></f:facet>
@@ -30,7 +34,10 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.price}" /></f:facet>
-                    <h:outputText value="#{dishes.price}"/>
+                    <h:outputText value="#{dishes.price}">
+                        <f:convertNumber type="number"
+                                         pattern="###,##0.00€" />
+                    </h:outputText>
                 </h:column>
                 <h:column>
                     <f:facet name="header"><h:outputText value="#{labels.category}" /></f:facet>

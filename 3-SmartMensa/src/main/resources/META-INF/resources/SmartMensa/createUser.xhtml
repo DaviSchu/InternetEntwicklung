@@ -17,7 +17,7 @@
                     </head>
                     <h1>#{labels.createAndChangeUser}</h1>
                     <h:panelGrid columns="3">
-                        <h:outputText value="#{labels.username}" />
+                        <h:outputText value="#{labels.username}: " />
                         <h:inputText value="#{userAdministrationView.username}" id="txtUsername"
                                      required="true"
                                      requiredMessage="#{msg.usernameRequired}" >
@@ -25,7 +25,7 @@
                         <h:message for="txtUsername" errorStyle="color: red" />
 
 
-                        <h:outputText value="#{labels.role}"
+                        <h:outputText value="#{labels.role}: "
                                       rendered="#{userAdministrationView.user.role.roleId ne 0}"/>
                         <h:selectOneMenu value="#{userAdministrationView.role}"
                                          converter="#{roleConverter}"
@@ -39,7 +39,7 @@
                         <h:message for="txtUserRoles" errorStyle="color: red"
                                    rendered="#{userAdministrationView.user.role.roleId ne 0}" />
 
-                        <h:outputText value="#{labels.userPassword}" />
+                        <h:outputText value="#{labels.userPassword}: " />
                         <h:inputText value="#{userAdministrationView.password}" id="txtUserPassword"
                                      required="true"
                                      requiredMessage="#{msg.passwordRequired}">
