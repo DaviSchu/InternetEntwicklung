@@ -24,17 +24,27 @@ public class OrderView {
             return "overview";
         } else {
             setOrder(false);
-
             return "menu";
         }
     }
 
+    public String takeOrder() {
+        setOrder(true);
+        setName(name);
+        setRoom(room);
+        FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO,
+                I18nUtil.getOrderSuccess() + room.toString() + "!", null);
+        return "order";
+    }
+
     public void validateRoom (FacesContext facesContext, UIComponent component,
                               Object value) throws ValidatorException {
+
         Room validateRoom = (Room)value;
         int building =validateRoom.getBuilding();
         int floor=validateRoom.getFloor();
         int roomNumber=validateRoom.getRoom();
+
 
         if(building<1 ^ building>9) {
             throw new ValidatorException(new FacesMessage
@@ -58,7 +68,7 @@ public class OrderView {
 
     public Room getRoom() { return room; }
 
-    public void setPassword(Room room) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 

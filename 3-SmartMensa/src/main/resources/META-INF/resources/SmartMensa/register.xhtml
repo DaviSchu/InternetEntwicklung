@@ -32,7 +32,7 @@
                                    required="true" requiredMessage="#{msg.passwordConfirmationRequired}" />
                     <h:message for="txtPasswordConfirmation" errorStyle="color: red" />
                     <o:validateEqual components="txtPassword txtPasswordConfirmation"
-                                     message="Passwords do not match!" showMessageFor="txtPasswordConfirmation" />
+                                     message="#{labels.passwordsNotEqual}" showMessageFor="txtPasswordConfirmation" />
                     <h:commandButton value="#{labels.buttonRegistration}"
                                      actionListener="#{registerView.register()}"
                                      action="registerSuccess"/>

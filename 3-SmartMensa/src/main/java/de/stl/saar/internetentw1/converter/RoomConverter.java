@@ -25,6 +25,7 @@ public class RoomConverter implements Converter {
         FacesMessage roomRequired = new FacesMessage(FacesMessage.SEVERITY_ERROR,
                 "Error", I18nUtil.getRoomRequired());
 
+
         if (value.length() != 4) {
             facesContext = FacesContext.getCurrentInstance();
             facesContext.addMessage(null, roomLengthError);
@@ -38,7 +39,7 @@ public class RoomConverter implements Converter {
         }
 
         building= Integer.parseInt(value.substring(0,1));
-        floor= Integer.parseInt(value.substring(1,1));
+        floor= Integer.parseInt(value.substring(1,2));
         room= Integer.parseInt(value.substring(2,4));
 
         return new Room(building, floor, room);

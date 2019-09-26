@@ -19,11 +19,12 @@
                     <h:panelGrid columns="3">
                         <h:outputText value="#{labels.roomNumber}: " />
                         <h:inputText value="#{orderView.room}" id="txtRoomNumber"
-                                     converter="#{roomConverter}"
                                      disabled="#{orderView.order}"
                                      required="true"
                                      requiredMessage="#{msg.roomRequired}"
-                                     validator="#{orderView.validateRoom}"/>
+                                     converter="#{roomConverter}"
+                                     validator="#{orderView.validateRoom}">
+                        </h:inputText>
                         <h:message for="txtRoomNumber" errorStyle="color: red" />
 
                         <h:outputText value="#{labels.yourName}: " />
@@ -35,8 +36,13 @@
                         <h:message for="txtUsername" errorStyle="color: red" />
                     </h:panelGrid>
                     <h:commandButton value="#{labels.buttonOrder}"
+                                     id="btOrder"
                                      disabled="#{orderView.order}"
-                                     actionListener="#{orderView.setOrder(true)}" />
+                                     action="#{orderView.takeOrder()}" />
+                    <h:message for="btOrder" infoStyle="color: green" />
+                    <h:messages globalOnly="true"
+                                showDetail="true"
+                                showSummary="false"/>
                 </h:panelGrid>
             </h:form>
             <h:panelGrid columns="1">

@@ -39,4 +39,6 @@ public class I18nUtil {
     public static String getBuildingError() {
         return messages.getString("buildingError");
     }
+
+    public static String getOrderSuccess() { return messages.getString("orderSuccess"); }
 }
