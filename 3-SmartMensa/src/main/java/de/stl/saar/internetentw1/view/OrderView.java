@@ -32,8 +32,8 @@ public class OrderView {
     public void takeOrder() {
         setOrder(true);
         FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                I18nUtil.getOrderSuccess() + room.toString() + "!", null);
-
+                I18nUtil.getOrderSuccess() + " " + room.toString() + "!", null);
+        FacesContext.getCurrentInstance().addMessage(null, facesMessage);
     }
 
     public void validateRoom (FacesContext facesContext, UIComponent component,

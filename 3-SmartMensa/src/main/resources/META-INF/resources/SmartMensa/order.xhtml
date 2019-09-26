@@ -38,7 +38,7 @@
                     <h:commandButton value="#{labels.buttonOrder}"
                                      id="btOrder"
                                      disabled="#{orderView.order}"
-                                     actionListener="#{orderView.takeOrder()}" />
+                                     action="#{orderView.takeOrder}" />
                     <h:message for="btOrder" infoStyle="color: green" />
                     <h:messages globalOnly="true"
                                 showDetail="true"
