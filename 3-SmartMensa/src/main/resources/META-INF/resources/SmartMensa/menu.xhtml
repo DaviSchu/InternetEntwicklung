@@ -81,9 +81,10 @@
                     </h:panelGroup>
                     <h:commandButton value="#{labels.buttonBack}" action="overview" />
                     <h:panelGroup>
-                        <h:outputText value="#{menuView.total} ">
+                        <h:outputText value="#{labels.priceTotal}: "/>
+                        <h:outputText value="#{menuView.total}">
                             <f:convertNumber type="number"
-                                             pattern="###,##0.00€" />
+                                             pattern="###,##0.00€ " />
                         </h:outputText>
                         <h:commandButton value="#{labels.buttonOrder}"
                                          disabled="#{menuView.shoppingCartEmpty}"
