@@ -76,7 +76,9 @@
                     <h:commandButton value="#{labels.buttonBack}" action="overview" />
                     <h:panelGroup>
                         <h:outputText value="#{labels.priceTotal}: #{menuView.total} €" />
-                        <h:commandButton value="#{labels.buttonOrder}" />
+                        <h:commandButton value="#{labels.buttonOrder}"
+                                         disabled="#{menuView.shoppingCartEmpty}"
+                                         action="order" />
                     </h:panelGroup>
                 </h:panelGrid>
             </h:form>

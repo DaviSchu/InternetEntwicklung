@@ -13,6 +13,7 @@ public class MenuView {
 
     private List<Dish> orderList = new LinkedList<>();
     private double total;
+    private boolean shoppingCartEmpty= true;
 
     public List<Dish> getOrderList() {
         return orderList;
@@ -33,11 +34,24 @@ public class MenuView {
     public void addDish (Dish dish) {
         orderList.add(dish);
         total += dish.getPrice();
+
+        shoppingCartEmpty= orderList.isEmpty();
+
     }
 
     public void removeDish (Dish dish) {
         orderList.remove(dish);
         total -= dish.getPrice();
+
+        shoppingCartEmpty= orderList.isEmpty();
+    }
+
+    public boolean isShoppingCartEmpty() {
+        return shoppingCartEmpty;
+    }
+
+    public void setShoppingCartEmpty(boolean shoppingCartEmpty) {
+        this.shoppingCartEmpty = shoppingCartEmpty;
     }
 
 }
