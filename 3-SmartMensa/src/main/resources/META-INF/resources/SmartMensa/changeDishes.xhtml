@@ -10,11 +10,12 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
-            <head>
-                <title>#{labels.createAndChangeDish}</title>
-            </head>
+
             <h:form>
             <h:panelGrid columns="1">
+                <head>
+                <title>#{labels.createAndChangeDish}</title>
+                </head>
                 <h1>#{labels.createAndChangeDish}</h1>
                 <h:graphicImage library="images" name="#{dishView.imageName}.jpg"/>
                 <h:panelGrid columns="3">
@@ -30,7 +31,7 @@
                                  required="true"
                                  requiredMessage="#{msg.dishPriceRequired}"
                                  validatorMessage="#{msg.invalidPrice}">
-                                <f:validateDoubleRange minimum="0.50" maximum="6.00"/>
+                                <f:validateDoubleRange minimum="0.50" maximum="8.00"/>
                     </h:inputText>
                     <h:message for="txtDishPrice" errorStyle="color: red" />
 

@@ -10,17 +10,17 @@
     <ui:composition template="template.xhtml">
 
         <ui:define name = "content">
-            <h:panelGrid>
-                <head>
-                    <title>#{labels.changeProfile}</title>
-                </head>
+            <h:form>
                 <h:panelGrid columns="1">
+                    <head>
+                        <title>#{labels.changeProfile}</title>
+                    </head>
                     <h1>#{msg.changeProfileSuccess}</h1>
                     <h:form>
                         <h:commandButton value="#{labels.buttonToOverview}" action="overview" />
                     </h:form>
                 </h:panelGrid>
-            </h:panelGrid>
+            </h:form>
         </ui:define>
 
     </ui:composition>

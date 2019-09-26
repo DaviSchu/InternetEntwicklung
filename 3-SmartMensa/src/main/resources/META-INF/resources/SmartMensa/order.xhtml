@@ -11,9 +11,10 @@
 
         <ui:define name = "content">
             <h:form>
-                <h:commandButton value="#{labels.buttonOrder}" action="overview" /><br/>
-                <h:commandButton value="#{labels.buttonBack}" action="menu" />
-
+                <h:panelGrid columns="1">
+                    <h:commandButton value="#{labels.buttonOrder}" action="overview" /><br/>
+                    <h:commandButton value="#{labels.buttonBack}" action="menu" />
+                </h:panelGrid>
             </h:form>
         </ui:define>
 
