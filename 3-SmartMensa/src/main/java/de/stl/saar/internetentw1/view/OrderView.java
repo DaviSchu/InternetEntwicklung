@@ -6,13 +6,14 @@ import jdk.nashorn.internal.runtime.regexp.joni.exception.ErrorMessages;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class OrderView {
 
     private String name;
@@ -21,20 +22,18 @@ public class OrderView {
 
     public String goBack() {
         if (order){
+            setOrder(false);
             return "overview";
         } else {
-            setOrder(false);
             return "menu";
         }
     }
 
-    public String takeOrder() {
+    public void takeOrder() {
         setOrder(true);
-        setName(name);
-        setRoom(room);
         FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO,
                 I18nUtil.getOrderSuccess() + room.toString() + "!", null);
-        return "order";
+
     }
 
     public void validateRoom (FacesContext facesContext, UIComponent component,

@@ -25,24 +25,23 @@ public class RoomConverter implements Converter {
         FacesMessage roomRequired = new FacesMessage(FacesMessage.SEVERITY_ERROR,
                 "Error", I18nUtil.getRoomRequired());
 
+        try {
+            Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            facesContext = FacesContext.getCurrentInstance();
+            facesContext.addMessage(null, roomRequired);
+        }
 
         if (value.length() != 4) {
             facesContext = FacesContext.getCurrentInstance();
             facesContext.addMessage(null, roomLengthError);
-        } else {
-            try {
-                Integer.parseInt(value);
-            } catch (Exception e) {
-                facesContext = FacesContext.getCurrentInstance();
-                facesContext.addMessage(null, roomRequired);
-            }
         }
 
-        building= Integer.parseInt(value.substring(0,1));
-        floor= Integer.parseInt(value.substring(1,2));
-        room= Integer.parseInt(value.substring(2,4));
+            building= Integer.parseInt(value.substring(0,1));
+            floor= Integer.parseInt(value.substring(1,2));
+            room= Integer.parseInt(value.substring(2,4));
 
-        return new Room(building, floor, room);
+            return new Room(building, floor, room);
 
     }
 
