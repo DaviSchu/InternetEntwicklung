@@ -4,7 +4,6 @@ import de.stl.saar.internetentw1.dao.classes.RoleDaoImpl;
 import de.stl.saar.internetentw1.dao.interfaces.RoleDao;
 import de.stl.saar.internetentw1.model.Role;
 
-import javax.faces.bean.ManagedBean;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;

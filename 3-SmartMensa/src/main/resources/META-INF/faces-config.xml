@@ -35,4 +35,20 @@
             de.stl.saar.internetentw1.validators.UserConfirmation
         </validator-class>
     </validator>
+    <converter>
+        <converter-for-class>
+            de.stl.saar.internetentw1.model.Role
+        </converter-for-class>
+        <converter-class>
+            de.stl.saar.internetentw1.converter.RoleConverter
+        </converter-class>
+    </converter>
+    <converter>
+        <converter-for-class>
+            de.stl.saar.internetentw1.model.Room
+        </converter-for-class>
+        <converter-class>
+            de.stl.saar.internetentw1.converter.RoomConverter
+        </converter-class>
+    </converter>
 </faces-config> 

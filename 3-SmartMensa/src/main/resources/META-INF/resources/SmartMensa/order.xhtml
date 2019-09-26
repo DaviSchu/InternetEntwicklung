@@ -12,11 +12,40 @@
         <ui:define name = "content">
             <h:form>
                 <h:panelGrid columns="1">
-                    <h:commandButton value="#{labels.buttonOrder}" action="overview" /><br/>
-                    <h:commandButton value="#{labels.buttonBack}" action="menu" />
+                    <head>
+                        <title>#{labels.deliveryInformation}</title>
+                    </head>
+                    <h1>#{labels.deliveryInformation}</h1>
+                    <h:panelGrid columns="3">
+                        <h:outputText value="#{labels.roomNumber}: " />
+                        <h:inputText value="#{orderView.room}" id="txtRoomNumber"
+                                     converter="#{roomConverter}"
+                                     disabled="#{orderView.order}"
+                                     required="true"
+                                     requiredMessage="#{msg.roomRequired}"
+                                     validator="#{orderView.validateRoom}"/>
+                        <h:message for="txtRoomNumber" errorStyle="color: red" />
+
+                        <h:outputText value="#{labels.yourName}: " />
+                        <h:inputText value="#{orderView.name}" id="txtUsername"
+                                     disabled="#{orderView.order}"
+                                     required="true"
+                                     requiredMessage="#{msg.nameRequired}" >
+                        </h:inputText>
+                        <h:message for="txtUsername" errorStyle="color: red" />
+                    </h:panelGrid>
+                    <h:commandButton value="#{labels.buttonOrder}"
+                                     disabled="#{orderView.order}"
+                                     actionListener="#{orderView.setOrder(true)}" />
                 </h:panelGrid>
             </h:form>
+            <h:panelGrid columns="1">
+                <h:form>
+                    <h:commandButton value="#{labels.buttonBack}" action="#{orderView.goBack()}" />
+                </h:form>
+            </h:panelGrid>
         </ui:define>
+
 
     </ui:composition>
 </h:body>

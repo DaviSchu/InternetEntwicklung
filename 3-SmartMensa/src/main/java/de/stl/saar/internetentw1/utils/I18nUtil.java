@@ -18,7 +18,25 @@ public class I18nUtil {
         return messages.getString("wrongLogInData");
     }
 
-    public static String getInvalidPassword() {
-        return messages.getString("wrongPassword");
+    public static String getInvalidPassword() { return messages.getString("wrongPassword"); }
+
+    public static String getRoomLengthError() {
+        return messages.getString("roomLengthError");
+    }
+
+    public static String getRoomRequired() {
+        return messages.getString("roomRequired");
+    }
+
+    public static String getRoomError() {
+        return messages.getString("roomError");
+    }
+
+    public static String getFloorError() {
+        return messages.getString("floorError");
+    }
+
+    public static String getBuildingError() {
+        return messages.getString("buildingError");
     }
 }

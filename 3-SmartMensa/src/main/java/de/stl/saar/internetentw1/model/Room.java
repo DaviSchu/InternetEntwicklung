@@ -12,6 +12,34 @@ public class Room {
 		this.room = room;
 	}
 
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Room other = (Room) obj;
+		if (this.room != other.room)
+			return false;
+		if (this.toString() == null) {
+			if (other.toString() != null)
+				return false;
+		} else if (!toString().equals(other.toString()))
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (building ^ (building >>> 32));
+		result = prime * result + (int) (floor ^ (floor >>> 32));
+		result = prime * result + (int) (room ^ (room >>> 32));
+		return result;
+	}
+
 	public int getBuilding() {
 		return building;
 	}

@@ -31,6 +31,15 @@ public class Role {
 		return true;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (roleId ^ (roleId >>> 32));
+		result = prime * result + ((roleName == null) ? 0 : roleName.hashCode());
+		return result;
+	}
+
 	public int getRoleId() {
 		return roleId;
 	}
