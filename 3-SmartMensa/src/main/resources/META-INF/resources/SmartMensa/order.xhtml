@@ -38,16 +38,25 @@
                     <h:commandButton value="#{labels.buttonOrder}"
                                      id="btOrder"
                                      disabled="#{orderView.order}"
-                                     action="#{orderView.takeOrder}" />
+                                     action="#{orderView.setOrder(true)}"/>
                     <h:message for="btOrder" infoStyle="color: green" />
+                    <h:outputFormat value="{0} {1}! {2} {3, number,##0.00€}."
+                                    rendered="#{orderView.order}">
+                        <f:param value="#{msg.orderSuccess}"/>
+                        <f:param value="#{orderView.room.toString()}"/>
+                        <f:param value="#{msg.orderCosts}"/>
+                        <f:param value="#{menuView.total}"/>
+                    </h:outputFormat>
                     <h:messages globalOnly="true"
                                 showDetail="true"
                                 showSummary="false"/>
+
                 </h:panelGrid>
             </h:form>
             <h:panelGrid columns="1">
                 <h:form>
-                    <h:commandButton value="#{labels.buttonBack}" action="#{orderView.goBack()}" />
+                    <h:commandButton value="#{labels.buttonBack}"
+                                     action="#{orderView.goBack}" />
                 </h:form>
             </h:panelGrid>
         </ui:define>

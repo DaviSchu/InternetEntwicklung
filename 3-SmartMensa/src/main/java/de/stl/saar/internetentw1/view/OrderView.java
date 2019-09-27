@@ -1,24 +1,28 @@
 package de.stl.saar.internetentw1.view;
 
+
 import de.stl.saar.internetentw1.model.Room;
 import de.stl.saar.internetentw1.utils.I18nUtil;
 import jdk.nashorn.internal.runtime.regexp.joni.exception.ErrorMessages;
 
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.context.Flash;
 import javax.faces.validator.ValidatorException;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 public class OrderView {
 
     private String name;
     private Room room;
     private boolean order=false;
+    private double total;
 
     /**
      * Navigiert den Benutzer zur Hauptseite, wenn dieser bestellt hat.
@@ -26,22 +30,8 @@ public class OrderView {
      * @return Die Seite, auf die als nächstes navigiert werden soll
      */
     public String goBack() {
-        if (order){
-            setOrder(false);
-            return "overview";
-        } else {
-            return "menu";
-        }
-    }
-
-    /**
-     * Gibt eine Erfolgsmeldung nach dem Bestellen zurück.
-     */
-    public void takeOrder() {
-        setOrder(true);
-        FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO,
-                I18nUtil.getOrderSuccess() + " " + room.toString() + "!", null);
-        FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+        setOrder(false);
+        return "overview";
     }
 
     /**
@@ -94,5 +84,9 @@ public class OrderView {
     public void setOrder(boolean order) {
         this.order = order;
     }
+
+    public double getTotal() { return total; }
+
+    public void setTotal(double total) { this.total = total; }
 
 }

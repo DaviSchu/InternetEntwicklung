@@ -3,12 +3,14 @@ package de.stl.saar.internetentw1.view;
 import de.stl.saar.internetentw1.model.Dish;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import java.util.LinkedList;
 import java.util.List;
 
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class MenuView {
 
     private List<Dish> orderList = new LinkedList<>();
@@ -53,6 +55,15 @@ public class MenuView {
         total -= dish.getPrice();
 
         shoppingCartEmpty= orderList.isEmpty();
+    }
+
+    /**
+     * Setzt alle relevanten Attribute zurück.
+     */
+    public void purge() {
+        orderList.removeAll(orderList);
+        this.total = 0.0;
+        this.shoppingCartEmpty = true;
     }
 
     public boolean isShoppingCartEmpty() {

@@ -11,7 +11,7 @@
 
         <ui:define name = "content">
 
-            <h:form>
+            <h:form id="form">
                 <head>
                     <title>#{labels.menu}</title>
                 </head>
@@ -54,12 +54,14 @@
                         </h:column>
                         <h:column>
                             <h:commandButton value="#{labels.buttonAddToShoppingCart}"
-                                             actionListener="#{menuView.addDish(dishes)}" />
+                                             actionListener="#{menuView.addDish(dishes)}">
+                                <f:ajax render="@form"/>
+                            </h:commandButton>
                         </h:column>
                      </h:dataTable>
                     </h:panelGroup>
 
-                    <h:panelGroup>
+                    <h:panelGroup id="wrapper">
                         <h:dataTable value="#{menuView.orderList}"
                                      var="dish"
                                      id="myOrder"
@@ -79,16 +81,17 @@
                             </h:column>
                         </h:dataTable>
                     </h:panelGroup>
-                    <h:commandButton value="#{labels.buttonBack}" action="overview" />
+                    <h:commandButton value="#{labels.buttonBack}"
+                                     action="overview" />
                     <h:panelGroup>
                         <h:outputText value="#{labels.priceTotal}: "/>
                         <h:outputText value="#{menuView.total}">
-                            <f:convertNumber type="number"
-                                             pattern="###,##0.00€ " />
-                        </h:outputText>
+                        <f:convertNumber type="number"
+                                         pattern="###,##0.00€ " />
+                    </h:outputText>
                         <h:commandButton value="#{labels.buttonOrder}"
                                          disabled="#{menuView.shoppingCartEmpty}"
-                                         action="order" />
+                                         action="order"/>
                     </h:panelGroup>
                 </h:panelGrid>
             </h:form>
