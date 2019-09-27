@@ -24,7 +24,8 @@
                                        actionListener="#{userAdministrationView.loadUser(userSession.user)}"
                                        action="userAdministration" />
                     </c:if>
-                    <h:commandLink value="#{labels.buttonChangeProfile}" action="changeProfile" />
+                    <h:commandLink value="#{labels.buttonChangeProfile}" action="changeProfile"
+                                   actionListener="#{userAdministrationView.loadUser(userSession.user)}"/>
                     <h:commandLink value="#{labels.buttonMenu}" action="menu" />
                     <h:commandLink value="#{labels.buttonLogOut}" action="login" actionListener="#{loginView.logOut}" />
                 </h:panelGrid>

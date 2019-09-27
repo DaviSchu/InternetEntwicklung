@@ -39,6 +39,7 @@
                 </h:column>
                 <h:column>
                     <h:commandButton value="#{labels.buttonChangeUser}"
+                                     rendered="#{(userSession.user.role.roleId eq 0) or (users.role.roleId gt 0) }"
                                      actionListener="#{userAdministrationView.loadUser(users)}"
                                      action="createUser">
                     </h:commandButton>

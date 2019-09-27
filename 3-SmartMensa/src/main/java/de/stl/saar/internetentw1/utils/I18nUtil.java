@@ -41,4 +41,6 @@ public class I18nUtil {
     }
 
     public static String getOrderSuccess() { return messages.getString("orderSuccess"); }
+
+    public static String getProfileChangedSuccess() { return messages.getString("changeProfileSuccess"); }
 }

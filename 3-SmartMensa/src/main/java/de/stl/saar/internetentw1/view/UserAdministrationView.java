@@ -1,6 +1,5 @@
 package de.stl.saar.internetentw1.view;
 
-import de.stl.saar.internetentw1.dao.interfaces.RoleDao;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 import de.stl.saar.internetentw1.model.Role;
 import de.stl.saar.internetentw1.model.User;
@@ -10,8 +9,7 @@ import de.stl.saar.internetentw1.utils.RandomUtils;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
-import java.util.Random;
+
 
 
 @ManagedBean
@@ -23,6 +21,7 @@ public class UserAdministrationView {
 
     @ManagedProperty("#{userSession}")
     private UserSession userSession;
+    private User currentUser;
 
     private int userId;
     private String userName;
@@ -33,22 +32,30 @@ public class UserAdministrationView {
 
     public void saveUser() {
         User newUser = new User(userName, password, role);
-        if (user != null) {
+
+        if(user.equals(userSession.getUser())) {
             newUser.setUserId(userId);
             newUser.setChangePassword(changePassword);
             userDao.replaceUser(newUser);
+            userSession.setUser(newUser);
         } else {
-            userDao.addUser(newUser);
+            if (user != null) {
+                newUser.setUserId(userId);
+                newUser.setChangePassword(changePassword);
+                userDao.replaceUser(newUser);
+            } else {
+                userDao.addUser(newUser);
+            }
         }
     }
 
     public void changeProfile() {
-        User currentUser = userSession.getUser();
-        if (currentUser != null) {
+        currentUser = userSession.getUser();
+        if (currentUser != null ) {
             currentUser.setUsername(userName);
             currentUser.setPassword(password);
-            userSession.setUser(currentUser);
             userDao.replaceUser(currentUser);
+            userSession.setUser(currentUser);
         }
     }
 
@@ -72,6 +79,7 @@ public class UserAdministrationView {
         password = user.getPassword();
         role = user.getRole();
         changePassword = user.isChangePassword();
+        print();
     }
 
     public void purge() {
@@ -146,5 +154,6 @@ public class UserAdministrationView {
     public void setUser(User user) {
         this.user = user;
     }
+
 
 }
