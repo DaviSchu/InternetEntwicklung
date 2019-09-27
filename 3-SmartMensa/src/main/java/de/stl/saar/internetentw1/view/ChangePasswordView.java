@@ -24,6 +24,12 @@ public class ChangePasswordView {
 
     private User user;
 
+    /**
+     * Ändert das Passwort eines Benutzers und erwartet vorher das
+     * ursprüngliche Passwort. Stimmen diese nicht überein, wird
+     * eine Fehlermeldung angezeigt.
+     * @return Die Seite, auf die als nächstes navigiert werden soll
+     */
     public String changePassword() {
         user = userSession.getUser();
         if (user.getPassword().matches(oldPassword)) {

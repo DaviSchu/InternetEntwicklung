@@ -1,5 +1,10 @@
 package de.stl.saar.internetentw1.model;
 
+/**
+ * Eine Klasse zur Verwaltung von Gerichten. Gerichte bestehen hierbei aus
+ * einer ID, die in der Datenbank ermittelt wird, einem Namen, einem Preis,
+ * einer Kategorie und einem Bildnamen, zum Abrufen eines Bildes aus den Ressourcen.
+ */
 public class Dish {
 	private int dishId;
 	private String dishName;

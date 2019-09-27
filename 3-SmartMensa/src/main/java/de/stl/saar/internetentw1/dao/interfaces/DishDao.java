@@ -6,28 +6,29 @@ import de.stl.saar.internetentw1.model.Dish;
 
 public interface DishDao {
 	/**
-	 * Fügt ein neues Gericht in die Datenbank ein. Enthält
-	 * der einzutragende Datensatz keinen Primärschlüsselwert
-	 * oder ist er bereits vergeben, wird ein noch freier
-	 * Primärschlüsselwert eingetragen. 
-	 * @param dish Das einzutragende Gericht. 
+	 * Fügt ein neues Gericht in die Datenbank ein. Dabei wird der
+	 * Primärschlüsselwert durch die Größe der Darenbank bestimmt.
+	 * @param dish Das Gericht, das hinzugefügt werden soll.
 	 */
 	void addDish(Dish dish);
+
 	/**
-	 * Loescht einen Datensatz aus der Dish-Tabelle.
-	 * @param dishId Die Id des zu löschenden Datensatzes. 
+	 * Entfernt ein Gericht aus der Datenbank und passt alle folgenden
+	 * Primärschlüsselwerte dynamisch an. Dabei wird zuerst das Gericht,
+	 * mit der mitgegebenen Dish-ID aus der Datenbank entfernt.
+	 * @param dishId Der Primärschlüsselwert des zu entfernenden Gerichts
 	 */
 	void removeDish(int dishId);
+
 	/**
-	 * Ermittelt alle Gerichte in der Datenbank. 
-	 * @return Eine Liste mit allen Gerichten in der Dish-Tabelle. Eine leere Liste,
-	 * falls die Tabelle leer ist. 
+	 * Gibt eine Liste mit allen Dish-Objekten zurück.
+	 * @return Die Liste mit allen Dish-Objekten
 	 */
 	List<Dish> findAllDishes();
 
 	/**
-	 * Setzt ein übergebenes Dish an die Stelle seiner Id
-	 * @param dish das einzufügende Dish
+	 * Setzt ein übergebenes Gericht an die Stelle seiner Id.
+	 * @param dish Das Gericht, das eingefügt werden soll
 	 */
 	void replaceDish(Dish dish);
 

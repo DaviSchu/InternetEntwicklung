@@ -43,6 +43,11 @@ public class UserDaoImpl implements UserDao {
 		addUser(user4);
 	}
 
+	/**
+	 * Fügt einen neuen User in die Datenbank ein. Dabei wird der
+	 * Primärschlüsselwert durch die Größe der Datenbank bestimmt.
+	 * @param user Der User, der hinzugefügt werden soll.
+	 */
 	@Override
 	public void addUser(final User user) {
 
@@ -81,7 +86,13 @@ public class UserDaoImpl implements UserDao {
 			return false;
 		}
 	}
-	
+
+	/**
+	 * Entfernt einen User aus der Datenbank und passt alle folgenden
+	 * Primärschlüsselwerte dynamisch an. Dabei wird zuerst der User,
+	 * mit der mitgegebenen User-ID aus der Datenbank entfernt.
+	 * @param userId Der Primärschlüsselwert des zu entfernenden Users
+	 */
 	@Override
 	public void removeUser(final int userId) {
 		User user;
@@ -93,6 +104,10 @@ public class UserDaoImpl implements UserDao {
 		userTable.remove(userTable.size());
 	}
 
+	/**
+	 * Gibt eine Liste mit allen User-Objekten zurück.
+	 * @return Die Liste mit allen User-Objekten
+	 */
 	@Override
 	public List<User> findAllUsers() {
 		final Collection<User> userCollection = userTable.values();
@@ -100,6 +115,10 @@ public class UserDaoImpl implements UserDao {
 		return users;
 	}
 
+	/**
+	 * Setzt einen übergebenen User an die Stelle seiner Id.
+	 * @param user Der User, der eingefügt werden soll
+	 */
 	@Override
 	public void replaceUser(User user) {
 		userTable.put(user.getUserId(), user);

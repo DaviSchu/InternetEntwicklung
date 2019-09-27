@@ -10,6 +10,10 @@ import de.stl.saar.internetentw1.dao.interfaces.DishDao;
 import de.stl.saar.internetentw1.dao.interfaces.RoleDao;
 import de.stl.saar.internetentw1.dao.interfaces.UserDao;
 
+/**
+ * Eine Klasse zum Konfigurieren der Datenbanken zur
+ * Wiederverwendung in Beans und xhtml-Dateien.
+ */
 @Configuration
 public class DaoConfiguration {
 

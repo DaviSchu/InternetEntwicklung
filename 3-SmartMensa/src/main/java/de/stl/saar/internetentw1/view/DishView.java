@@ -29,6 +29,11 @@ public class DishView {
         return Category.values();
     }
 
+    /**
+     * Fügt ein neues Dish-Objekt zur Datenbank hinzu. Existiert das
+     * Objekt bereits, wird dieses durch das neue ersetzt.
+     * @return Die Seite, auf die als nächstes navigiert werden soll
+     */
     public String saveDish() {
         Dish newDish = new Dish(dishName, price, category, imageName);
         if (dish != null) {
@@ -50,6 +55,10 @@ public class DishView {
         System.out.println(imageName);
     }
 
+    /**
+     * Lädt ein mitgegebenes Dish-Objekt in die Klasse.
+     * @param dish Das Dish-Objekt, was geladen werden soll
+     */
     public void loadDish(Dish dish) {
         this.dish = dish;
         dishId = dish.getDishId();
@@ -59,6 +68,9 @@ public class DishView {
         imageName = dish.getImageName();
     }
 
+    /**
+     * Setzt alle relevanten Dish-Attribute zurück.
+     */
     public void purge() {
         this.dish = null;
         dishId = 0;

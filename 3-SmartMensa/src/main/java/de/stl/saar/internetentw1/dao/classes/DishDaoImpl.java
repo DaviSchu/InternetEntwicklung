@@ -44,7 +44,11 @@ public class DishDaoImpl implements DishDao {
 		addDish(dish9);
 		addDish(dish10);
 	}
-
+	/**
+	 * Fügt ein neues Gericht in die Datenbank ein. Dabei wird der
+	 * Primärschlüsselwert durch die Größe der Darenbank bestimmt.
+	 * @param dish Das Gericht, das hinzugefügt werden soll.
+	 */
 	@Override
 	public void addDish(final Dish dish) {
 		dish.setDishId(dishTable.size()+1);
@@ -82,7 +86,13 @@ public class DishDaoImpl implements DishDao {
 			return false;
 		}
 	}
-	
+
+	/**
+	 * Entfernt ein Gericht aus der Datenbank und passt alle folgenden
+	 * Primärschlüsselwerte dynamisch an. Dabei wird zuerst das Gericht,
+	 * mit der mitgegebenen Dish-ID aus der Datenbank entfernt.
+	 * @param dishId Der Primärschlüsselwert des zu entfernenden Gerichts
+	 */
 	@Override
 	public void removeDish(final int dishId) {
 		Dish dish;
@@ -94,11 +104,19 @@ public class DishDaoImpl implements DishDao {
 		dishTable.remove(dishTable.size());
 	}
 
+	/**
+	 * Setzt ein übergebenes Gericht an die Stelle seiner Id.
+	 * @param dish Das Gericht, das eingefügt werden soll
+	 */
 	@Override
 	public void replaceDish(Dish dish) {
 		dishTable.put(dish.getDishId(), dish);
 	}
 
+	/**
+	 * Gibt eine Liste mit allen Dish-Objekten zurück.
+	 * @return Die Liste mit allen Dish-Objekten
+	 */
 	@Override
 	public List<Dish> findAllDishes() {
 		final Collection<Dish> dishCollection = dishTable.values();

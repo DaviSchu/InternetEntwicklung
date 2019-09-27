@@ -57,6 +57,15 @@ public class LoginView {
         this.userSession = userSession;
     }
 
+    /**
+     * Nimmt Daten aus der Login-Seite entgegen und speichert diese in die Klasse ab.
+     * Existiert ein User in der Datenbank, mit den selben Eingaben, wird dieser eingeloggt,
+     * in die UserSession zwischengespeichert und zur Hauptseite weitergeleitet.
+     * Vorher wird überprüft, ob der Benutzer sein Passwort ändern muss.
+     * Existiert kein User in der Datenbank, mit den selben Eingaben, wird eine Fehlermeldung
+     * erzeugt.
+     * @return Die Seite, auf die als nächstes navigiert werden soll
+     */
     public String login() {
 
         List<User> userList = userDao.findAllUsers();
@@ -84,7 +93,9 @@ public class LoginView {
     }
 
 
-
+    /**
+     * Löscht die Daten aus der UserSession.
+     */
     public void logOut(){
         userSession.setUser(null);
     }

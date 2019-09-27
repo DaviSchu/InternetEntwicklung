@@ -20,6 +20,11 @@ public class OrderView {
     private Room room;
     private boolean order=false;
 
+    /**
+     * Navigiert den Benutzer zur Hauptseite, wenn dieser bestellt hat.
+     * Hat dieser keine Bestellung getätigt, wird er zur Speisekarte weitergeleitet.
+     * @return Die Seite, auf die als nächstes navigiert werden soll
+     */
     public String goBack() {
         if (order){
             setOrder(false);
@@ -29,6 +34,9 @@ public class OrderView {
         }
     }
 
+    /**
+     * Gibt eine Erfolgsmeldung nach dem Bestellen zurück.
+     */
     public void takeOrder() {
         setOrder(true);
         FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO,
@@ -36,6 +44,14 @@ public class OrderView {
         FacesContext.getCurrentInstance().addMessage(null, facesMessage);
     }
 
+    /**
+     * Validiert das mitgegebene Room-Objekt. Sollte das Objekt den Anforderungen
+     * nicht genügen, wird eine Fehlermeldung geworfen.
+     * @param facesContext
+     * @param component
+     * @param value Das zu validierende Room-Objekt
+     * @throws ValidatorException Die Fehlermeldung, die geworfen werden soll
+     */
     public void validateRoom (FacesContext facesContext, UIComponent component,
                               Object value) throws ValidatorException {
 

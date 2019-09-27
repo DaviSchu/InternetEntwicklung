@@ -1,5 +1,11 @@
 package de.stl.saar.internetentw1.model;
 
+/**
+ * Eine Klasse zur Verwaltung von Benutzern. Benutzer bestehen hierbei aus
+ * einer ID, die in der Datenbank ermittelt wird, einem Namen, einem Passwort,
+ * einer Rolle und einem Boolean-Wert, der bestimmt, ob der Benutzer sein
+ * Passwort ändern muss.
+ */
 public class User {
 	private int userId;
 	private String username;

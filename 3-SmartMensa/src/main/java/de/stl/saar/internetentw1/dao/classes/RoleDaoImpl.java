@@ -31,6 +31,10 @@ public class RoleDaoImpl implements RoleDao {
 		addRole(role2);
 	}
 
+	/**
+	 * Fügt eine neue Rolle in die Datenbank ein.
+	 * @param role Die Role, die hinzugefügt werden soll.
+	 */
 	@Override
 	public void addRole(final Role role) {
 		int primaryKeyValue = role.getRoleId();
@@ -78,6 +82,11 @@ public class RoleDaoImpl implements RoleDao {
 		}
 	}
 
+	/**
+	 * Gibt eine Liste mit allen Role-Objekten zurück,
+	 * die bei der Erstellung neuer User verwendet werden sollen.
+	 * @return Die Liste mit allen Role-Objekten
+	 */
 	@Override
 	public List<Role> findCreatableRoles() {
 		final Collection<Role> roleCollection = roleTable.values();
@@ -86,19 +95,33 @@ public class RoleDaoImpl implements RoleDao {
 		return roles;
 	}
 
+	/**
+	 * Entfernt eine Role aus der Datenbank.
+	 * @param roleId Der Primärschlüsselwert der zu entfernenden Role
+	 */
 	@Override
 	public void removeRole(final int roleId)
 	{
 		roleTable.remove(roleId);
 	}
-	
+
+	/**
+	 * Gibt eine Liste mit allen Role-Objekten zurück.
+	 * @return Die Liste mit allen Role-Objekten
+	 */
 	@Override
 	public List<Role> findAllRoles() {
 		final Collection<Role> roleCollection = roleTable.values();
 		final List<Role> roles = new ArrayList<>(roleCollection);
 		return roles;
 	}
-	
+
+	/**
+	 * Gibt eine Liste mit allen Role-Objekten zurück, deren
+	 * Name dem mitgegebenem String entspricht.
+	 * @param roleName Der zu vergleichende String
+	 * @return Die Liste mit allen Role-Objekten
+	 */
 	@Override
 	public Role findRoleByName(final String roleName) {
 		final List<Role> roleList = findAllRoles();

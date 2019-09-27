@@ -30,6 +30,10 @@ public class UserAdministrationView {
     private boolean changePassword;
     private User user;
 
+    /**
+     * Fügt ein neues User-Objekt zur Datenbank hinzu. Existiert das
+     * Objekt bereits, wird dieses durch das neue ersetzt.
+     */
     public void saveUser() {
         User newUser = new User(userName, password, role);
 
@@ -49,6 +53,10 @@ public class UserAdministrationView {
         }
     }
 
+    /**
+     * Lädt das User-Objekt aus der UserSession und überschreibt seine Daten,
+     * mit den mitgegebenen Eingaben.
+     */
     public void changeProfile() {
         currentUser = userSession.getUser();
         if (currentUser != null ) {
@@ -59,6 +67,10 @@ public class UserAdministrationView {
         }
     }
 
+    /**
+     * Weist einem User-Objekt einen zufälligen String aus der RandomUtil hinzu
+     * und setzt seinen Boolean-Wert für die Passwortveränderung auf true.
+     */
     public void createRandomPassword() {
         setPassword(RandomUtils.createStringWithRandomChars(8));
         setChangePassword(true);
@@ -72,6 +84,10 @@ public class UserAdministrationView {
         System.out.println(changePassword);
     }
 
+    /**
+     * Lädt ein mitgegebenes User-Objekt in die Klasse.
+     * @param user Das User-Objekt, was geladen werden soll
+     */
     public void loadUser(User user) {
         this.user = user;
         userId = user.getUserId();
@@ -82,6 +98,9 @@ public class UserAdministrationView {
         print();
     }
 
+    /**
+     * Setzt alle relevanten User-Attribute zurück.
+     */
     public void purge() {
         this.user = null;
         userId = 0;

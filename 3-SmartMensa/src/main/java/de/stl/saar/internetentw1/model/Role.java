@@ -1,5 +1,9 @@
 package de.stl.saar.internetentw1.model;
 
+/**
+ * Eine Klasse zur Verwaltung von Rollen. Rollen bestehen hierbei aus
+ * einer ID und einem Namen.
+ */
 public class Role {
 	private int roleId;
 	private String roleName;

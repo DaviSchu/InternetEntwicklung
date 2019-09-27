@@ -2,6 +2,9 @@ package de.stl.saar.internetentw1.utils;
 
 import java.util.ResourceBundle;
 
+/**
+ * Eine Klasse zum Ermitteln von bestimmten Strings aus den Resource-Bundles.
+ */
 public class I18nUtil {
 
     private static ResourceBundle messages = ResourceBundle.getBundle("i18n/messages");

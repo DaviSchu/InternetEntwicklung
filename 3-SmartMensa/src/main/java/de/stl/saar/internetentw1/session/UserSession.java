@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 /**
- * Stores the current logged in user
+ * Speichert den User, der derzeit eingeloggt ist.
  */
 @ManagedBean
 @SessionScoped

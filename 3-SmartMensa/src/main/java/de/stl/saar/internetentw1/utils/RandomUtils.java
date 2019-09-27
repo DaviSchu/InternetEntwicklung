@@ -39,6 +39,11 @@ public class RandomUtils {
 		return random.nextInt();
 	}
 
+	/**
+	 * Erzeugt einen zufälligen String aus Zahlen und Buchstaben.
+	 * @param length der Maximalwert.
+	 * @return Der erzeugte Zufallsstring
+	 */
 	public static String createStringWithRandomChars(int length) {
 		char[] randomString = new char[length];
 		for (int i= 0; i< length; i++) {

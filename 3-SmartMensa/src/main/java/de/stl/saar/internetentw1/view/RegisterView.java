@@ -51,6 +51,9 @@ public class RegisterView {
         this.userDao = userDao;
     }
 
+    /**
+     * Fügt einen neuen Benutzer zur User-Datenbank hinzu.
+     */
     public void register() {
 
         Role role = new Role(2,"user");

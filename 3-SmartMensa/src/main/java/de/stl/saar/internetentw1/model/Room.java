@@ -1,5 +1,9 @@
 package de.stl.saar.internetentw1.model;
 
+/**
+ * Eine Klasse zur Verwaltung von Räumen. Räume bestehen hierbei aus
+ * einer Gebäudenummer, einer Etagennummer und einer Raumnummer.
+ */
 public class Room {
 	private int building;
 	private int floor;

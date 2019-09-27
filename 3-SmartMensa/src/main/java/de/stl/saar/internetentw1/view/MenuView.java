@@ -31,6 +31,11 @@ public class MenuView {
         total = newTotal;
     }
 
+    /**
+     * Fügt ein neues Dish-Objekt zur Datenbank hinzu. Existiert das
+     * Objekt bereits, wird dieses durch das neue ersetzt.
+     * @param dish Das hinzuzufügende Dish-Objekt
+     */
     public void addDish (Dish dish) {
         orderList.add(dish);
         total += dish.getPrice();
@@ -39,6 +44,10 @@ public class MenuView {
 
     }
 
+    /**
+     * Entfernt das angegebene Dish-Objekt aus der Bestell-Liste.
+     * @param dish Das zu entfernende Dish-Objekt
+     */
     public void removeDish (Dish dish) {
         orderList.remove(dish);
         total -= dish.getPrice();
