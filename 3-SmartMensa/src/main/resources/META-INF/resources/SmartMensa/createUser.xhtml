@@ -27,7 +27,9 @@
                         <h:outputText value="#{labels.email}: " />
                         <h:inputText value="#{userAdministrationView.email}" id="txtEmail"
                                      required="true"
-                                     requiredMessage="#{msg.emailAddressRequired}" >
+                                     requiredMessage="#{msg.emailAddressRequired}"
+                                     validatorMessage="#{msg.invalidEmailAddress}" >
+                            <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />
                         </h:inputText>
                         <h:message for="txtEmail" errorStyle="color: red" />
 

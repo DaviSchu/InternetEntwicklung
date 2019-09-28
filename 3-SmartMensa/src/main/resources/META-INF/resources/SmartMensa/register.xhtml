@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:o="http://omnifaces.org/ui">
+      xmlns:o="http://omnifaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 
 <h:body>
     <ui:composition template="template.xhtml">
@@ -23,7 +23,9 @@
                     <h:outputText value="#{labels.emailAddress}: " />
                     <h:inputText value="#{registerView.email}" id="txtEmail"
                                  required="true"
-                                 requiredMessage="#{msg.emailAddressRequired}" >
+                                 requiredMessage="#{msg.emailAddressRequired}"
+                                 validatorMessage="#{msg.invalidEmailAddress}" >
+                        <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />
                     </h:inputText>
                     <h:message for="txtEmail" errorStyle="color: red" />
 
