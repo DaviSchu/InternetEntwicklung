@@ -26,7 +26,7 @@ public class DishDaoImpl implements DishDao {
 		final Dish dish1 = new Dish("Baumkuchen", 2.0, Category.DESSERT, "baumkuchen");
 		final Dish dish2 = new Dish("Creme Brulee", 2.5, Category.DESSERT, "cremeBrulee");
 		final Dish dish3 = new Dish("Flammkuchen", 7.5, Category.MAIN_DISH, "flammkuchen");
-		final Dish dish4 = new Dish("Grießnockerl-Suppe", 4, Category.SOUP, "griessnockerlsuppe");
+		final Dish dish4 = new Dish("Griessnockerl-Suppe", 4, Category.SOUP, "griessnockerlsuppe");
 		final Dish dish5 = new Dish("Pudding", 2, Category.DESSERT, "pudding");
 		final Dish dish6 = new Dish("Rindfleischsuppe", 3.5, Category.SOUP, "rindfleischsuppe");
 		final Dish dish7 = new Dish("Rumänischer Salat", 3.5, Category.SALAD, "rumaenischerSalat");
