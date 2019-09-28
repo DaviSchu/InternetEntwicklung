@@ -61,7 +61,8 @@ public class RegisterView {
     }
 
     /**
-     * Fügt einen neuen Benutzer zur User-Datenbank hinzu.
+     * Fügt einen neuen Benutzer zur User-Datenbank hinzu. Hierfür müssen beide
+     * Passwörter übereinstimmen und die E-Mail-Adresse mit "htwsaar.de" enden.
      */
     public void register() {
 

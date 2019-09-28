@@ -24,8 +24,8 @@
                     <h:inputText value="#{registerView.email}" id="txtEmail"
                                  required="true"
                                  requiredMessage="#{msg.emailAddressRequired}"
-                                 validatorMessage="#{msg.invalidEmailAddress}" >
-                        <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />
+                                 validatorMessage="#{msg.notAHtwEmail}" >
+                        <f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@htwsaar\.de" />
                     </h:inputText>
                     <h:message for="txtEmail" errorStyle="color: red" />
 
