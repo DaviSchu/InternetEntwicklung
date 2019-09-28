@@ -17,6 +17,7 @@ public class RegisterView {
 
     private String userName;
     private String password;
+    private String email;
     private String confirmPassword;
 
     public String getUserName() {
@@ -33,6 +34,14 @@ public class RegisterView {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getConfirmPassword() {
@@ -57,7 +66,7 @@ public class RegisterView {
     public void register() {
 
         Role role = new Role(2,"user");
-        User newUser = new User(userName,password,role);
+        User newUser = new User(userName, password, email, role);
 
         userDao.addUser(newUser);
     }

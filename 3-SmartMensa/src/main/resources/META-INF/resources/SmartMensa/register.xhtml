@@ -14,18 +14,23 @@
             </head>
             <h1>#{labels.registration}</h1>
             <h:form>
-                <h:panelGrid columns="4">
+                <h:panelGrid columns="3">
                     <h:outputText value="#{labels.username}: " />
                     <h:inputText value="#{registerView.userName}" id="txtUsername"
                                  required="true" requiredMessage="#{msg.usernameRequired}" />
                     <h:message for="txtUsername" errorStyle="color: red" />
-                    <h:panelGroup />
+
+                    <h:outputText value="#{labels.emailAddress}: " />
+                    <h:inputText value="#{registerView.email}" id="txtEmail"
+                                 required="true"
+                                 requiredMessage="#{msg.emailAddressRequired}" >
+                    </h:inputText>
+                    <h:message for="txtEmail" errorStyle="color: red" />
 
                     <h:outputText value="#{labels.userPassword}: " />
                     <h:inputSecret value="#{registerView.password}" id="txtPassword"
                                    required="true" requiredMessage="#{msg.passwordRequired}" />
                     <h:message for="txtPassword" errorStyle="color: red" />
-                    <h:panelGroup />
 
                     <h:outputText value="#{labels.confirmPassword}: " />
                     <h:inputSecret value="#{registerView.confirmPassword}" id="txtPasswordConfirmation"

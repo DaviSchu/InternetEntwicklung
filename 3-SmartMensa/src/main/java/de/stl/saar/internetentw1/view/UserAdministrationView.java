@@ -26,6 +26,7 @@ public class UserAdministrationView {
     private int userId;
     private String userName;
     private String password;
+    private String email;
     private Role role;
     private boolean changePassword;
     private User user;
@@ -35,7 +36,7 @@ public class UserAdministrationView {
      * Objekt bereits, wird dieses durch das neue ersetzt.
      */
     public void saveUser() {
-        User newUser = new User(userName, password, role);
+        User newUser = new User(userName, password, email, role);
 
         if(user.equals(userSession.getUser())) {
             newUser.setUserId(userId);
@@ -62,6 +63,7 @@ public class UserAdministrationView {
         if (currentUser != null ) {
             currentUser.setUsername(userName);
             currentUser.setPassword(password);
+            currentUser.setEmail(email);
             userDao.replaceUser(currentUser);
             userSession.setUser(currentUser);
         }
@@ -80,6 +82,7 @@ public class UserAdministrationView {
         System.out.println(userId);
         System.out.println(userName);
         System.out.println(password);
+        System.out.println(email);
         System.out.println(role);
         System.out.println(changePassword);
     }
@@ -93,9 +96,9 @@ public class UserAdministrationView {
         userId = user.getUserId();
         userName = user.getUsername();
         password = user.getPassword();
+        email = user.getEmail();
         role = user.getRole();
         changePassword = user.isChangePassword();
-        print();
     }
 
     /**
@@ -105,6 +108,7 @@ public class UserAdministrationView {
         this.user = null;
         userId = 0;
         userName = null;
+        email = null;
         password = null;
         role = null;
         changePassword = false;
@@ -146,9 +150,13 @@ public class UserAdministrationView {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) { this.password = password; }
+
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) { this.email = email; }
 
     public Role getRole() {
         return role;

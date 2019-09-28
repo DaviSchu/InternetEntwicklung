@@ -32,10 +32,10 @@ public class UserDaoImpl implements UserDao {
 		final Role superAdminRole = roleDao.findRoleByName("superadmin");
 		final Role adminRole = roleDao.findRoleByName("admin");
 		final Role userRole = roleDao.findRoleByName("user");
-		final User user1 = new User("colbertz", "1234", superAdminRole);
-		final User user2 = new User("asdf", "fdsa", adminRole);
-		final User user3 = new User("wpy", "qwertz", userRole);
-		final User user4 = new User( "api", "5678", userRole);
+		final User user1 = new User("colbertz", "1234", "colbertz@htwsaar.de", superAdminRole);
+		final User user2 = new User("asdf", "fdsa", "asdf@htwsaar.de", adminRole);
+		final User user3 = new User("wpy", "qwertz", "wpy@htwsaar.de", userRole);
+		final User user4 = new User( "api", "5678", "api@htwsaar.de", userRole);
 		user3.setChangePassword(true);
 		addUser(user1);
 		addUser(user2);
